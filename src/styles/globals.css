@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Add this to your styles/globals.css */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+/* styles/globals.css */
+
+body {
+  font-family: var(--font-poppins);
+  background: #F4F4F4;
+  width:100%
+}
+.custom-text{
+  font-weight: 100 !important;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  h1, h2, h3, h4, h5, h6, p, a, span, li, div {
+    font-weight: 100; 
+  }
+}
+.slider-container{
+  height: 400px;
+}
+
+.slider-container .slick-center {
+  /* width: 367px !important; */
+  margin: 0 6px; 
+  
+  /* transition: transform 0.7s ease; */
+}
+
+.slick-slide {
+  /* text-align: center; */
+   padding: 10px 0;
+   
+   
+
+}
+
+.slick-center {
+  height: 444px;
+  background-color: #fff; /* Make the center slide more prominent */
+}
