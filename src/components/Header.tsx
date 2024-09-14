@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   };
 
   return (
-    <main className={`xl:max-w-[1280px] max-w-full mx-auto w-full px-5 lg:px-0  flex flex-wrap items-center justify-between  py-3`}>
+    <main className={`xl:max-w-[1280px] max-w-full mx-auto py-5 w-full px-4 2xl:px-0  flex flex-wrap items-center justify-between`}>
       <Image src={logo.src} alt="Main Logo" width={132} height={57} />
 
       <div onMouseOver={handleMouseOver}

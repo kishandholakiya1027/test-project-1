@@ -11,8 +11,8 @@ export default function GiniToken() {
         setIsDesktop(window.innerWidth > 640);
     }, []);
     return (
-        <div>
-            <div className="lg:flex items-center justify-center w-full lg:mt-28 mt-12">
+        <div className='lg:mt-[120px] mt-12'>
+            <div className="lg:flex items-center justify-center w-full">
                 <div className="flex justify-center items-center lg:w-[40%] ">
                    {/* Left Line */}
 <div className="relative h-[1px] w-1/2 hidden lg:block">
@@ -64,11 +64,11 @@ export default function GiniToken() {
                 </div>
 
             </div>
-            <div className="lg:flex flex-col gap-3 justify-center lg:px-6 text-center item-center lg:mt-10 mt-5" >
+            <div className="lg:flex flex-col gap-4 justify-center lg:px-6 text-center item-center lg:mt-10 mt-4" >
                 <p className="lg:text-[32px] font-bold" >The Kalp ecosystem offers a game-changing solution.</p>
-                <p className='mt-2 lg:text-[16px] text-[13px] lg:px-6 '>It seamlessly merges the best of permissionless and permissioned networks, ensuring regulatory compliance without sacrificing decentralization. Governed by the Kalp Foundation and accessed via the <span className='font-bold' >{`"Gini"`}</span> token.</p>
+                <p className='lg:text-[16px] text-[13px] lg:px-6 '>It seamlessly merges the best of permissionless and permissioned networks, ensuring regulatory compliance without sacrificing decentralization. Governed by the Kalp Foundation and accessed via the <span className='font-bold' >{`"Gini"`}</span> token.</p>
             </div>
-            <div className='max-w-[530px] lg:hidden mt-4' 
+            <div className='max-w-[530px] lg:hidden mt-4 mx-auto' 
                   onMouseOver={()=>setSrc(giniColoured)}
                   onMouseOut={()=>setSrc(giniToken) }
                   onTouchStart={()=>setSrc(giniColoured)}
@@ -80,13 +80,13 @@ export default function GiniToken() {
 
                 className="transition-transform duration-4000 ease-in-out lg:max-w-[530px] max-h-[300px] "/>
                 </div>
-                <div className="flex flex-col lg:flex-row lg:gap-8 gap-6 items-start lg:px-4 px-2 justify-between lg:mt-10 mt-6">
+                <div className="lg:flex lg:gap-[62px] gap-6 items-center lg:px-4 px-2 justify-between lg:mt-10 mt-4">
   {/* Text Section */}
   <div className="lg:w-1/2 w-full">
     <p className="lg:text-[24px] text-md font-semibold">
       Our Digital Catalyst
     </p>
-    <p className="mt-2 lg:text-[14px] text-[12px]">
+    <p className="lg:mt-[32px] mt-4 lg:text-[14px] text-[12px]">
       At the heart of the KALP Foundation&apos;s mission lies our digital currency, Gini. Designed to empower individuals and communities, Gini serves as a tool for inclusivity, transparency, and equitable reward within our ecosystem. Gini is a utility fuel to access the services of the Kalp DPI.
     </p>
     <p className="mt-2 lg:text-[14px] text-[12px] lg:mt-6 mt-4">
@@ -105,7 +105,7 @@ export default function GiniToken() {
   </div>
 
   {/* Image Section */}
-  <div className="lg:w-1/2 w-full">
+  <div className="lg:w-1/2 w-full hidden">
     {isDesktop ? (
       <div
         className="max-w-full"

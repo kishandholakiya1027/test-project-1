@@ -79,9 +79,9 @@ const boxData = [
 
 const Dpi: React.FC = () => {
   return (
-    <div className="lg:mt-20 mt-12 w-full">
-      <div className="lg:flex flex-col gap-3 justify-center lg:px-12 text-center">
-        <h1 className="lg:text-[32px] text-md font-bold mb-4">
+    <div className="lg:mt-[120px] mt-12 w-full">
+      <div className="lg:flex flex-col gap-[10px] justify-center lg:px-12 text-center">
+        <h1 className="lg:text-[32px] text-md font-bold">
           Digital Public Infrastructure (DPI)
         </h1>
         <p className="lg:text-[16px] text-sm mb-2 lg:mb-0 text-center">
@@ -94,7 +94,7 @@ const Dpi: React.FC = () => {
       </div>
 
       {/* 4x4 Grid */}
-      <div className="grid grid-cols-4 gap-4 py-8">
+      <div className="grid grid-cols-4 gap-[5px] md:gap-[24px] pt-4 md:pt-[48px]">
         {boxData.map((box,index) => (
           <div key={index} className='lg:col-span-1 col-span-2' >
           <AnimatedImageBox
@@ -223,7 +223,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
         className="absolute top-0 left-0 w-full h-full border-[4px] border-black flex flex-col justify-center items-center"
         style={{ position: 'absolute', left: '0%', right: '0%' }}
       >
-        <div className="absolute top-4 lg:left-4 left-2 text-black z-10">
+        <div className="absolute top-4 lg:left-4 lg:right-4 left-2 text-black z-10 ">
           <p className="lg:text-3xl text-xl uppercase font-bold">{title}</p>
         <p className="lg:text-2xl text-md mt-4 lg:mt-5">{description}</p>
 
@@ -232,7 +232,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
    :  <>
    <div
       ref={image1Ref}
-      className="absolute top-0 left-0 w-full h-full border border-black flex flex-col justify-center items-center"
+      className="absolute top-0 left-0 !w-full h-full border border-black flex flex-col justify-center items-center"
       style={{ position: 'absolute', left: '0%', right: '0%' }}
     >
       <Image src={linesImage} alt={title} layout="fill" objectFit="cover" />

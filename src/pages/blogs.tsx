@@ -98,7 +98,7 @@ export default function Blogs() {
         <>
             <div>
                 <Header />
-                <div className="lg:px-10 px-4 " >
+                <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-[20px] lg:px-0" >
                     <div className="lg:px-12" >
                         <p className="lg:text-[56px] text-2xl font-semibold mt-7">Resources and Insights
                         </p>

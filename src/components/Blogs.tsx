@@ -37,44 +37,47 @@ const Blogs: React.FC = () => {
     },
     ]
     return (
-        <div>
-            <div className='flex flex-col justify-center items-center lg:mt-28 mt-24' >
+        <div className='lg:mt-[120px] mt-24'>
+            <div className='flex flex-col justify-center items-center' >
                 <h1 className="lg:text-[32px] text-md font-bold mb-4">Blogs</h1>
-                <div className={`flex flex-wrap ${isDesktop ? 'justify-between' : 'justify-center'} w-full items-center`}>
-                    {isDesktop ? <p className='text-md ' ></p> : null}
-
-                    <p className='text-[16px] text-center lg:ml-28' >Dive into the Insights</p>
-                    {isDesktop ? <p className='lg:text-[20px] text-md underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 mr-3' onClick={() => router.push('/blogs')} >View More</p> : null}
+                <div className={`w-full items-center relative`}>
+                    <p className='text-[16px] text-center'>Dive into the Insights</p>
+                    <p className='lg:text-[20px] hidden md:block absolute right-0 top-0 text-md underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 mr-3' onClick={() => router.push('/blogs')} >View More</p>
                 </div>
-                <div className="grid grid-cols-3 gap-5 " >
+                <div className="grid grid-cols-3 gap-5 mt-[40px]" >
                     {data?.map((item: any, index: number) => (
-                        <div onMouseEnter={() => setHoveredIndex(index)}
+<div onMouseEnter={() => setHoveredIndex(index)}
                              onMouseLeave={() => setHoveredIndex(null)} 
-                             key={index} className="lg:col-span-1 col-span-3 mt-6" >
-                            <div className="lg:w-[395px] w-[344px]" >
-                                <Image src={hoveredIndex === index ? item.hoveredimage : item.image}  alt="kalp Logo" className="" />
-                            </div>
-                            <div>
-                                <p className="lg:text-[20px] text-md mt-4 font-semibold">
-                                    {item?.title}
-                                </p>
-                                <p className="mt-3 lg:text-sm text-[14px] ">
-                                    {item?.description}  </p>
-                                <div className="flex items-center gap-1 mt-4 group">
-                                    <Image
-                                        src={arrow}
-                                        alt="Arrow Icon"
-                                        className="h-3 transform -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                                    />
-                                    <p className="lg:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2" onClick={() => router.push('/blogs')}>
-                                        Read More
-                                    </p>
+                             key={index} className="lg:col-span-1 col-span-3 md:mb-[40px]">
+                                <div className='h-[317px]'>
+                        <Image src={item?.image} alt="kalp Logo" className="w-full h-full" />
                                 </div>
-                            </div>
-                        </div>
+                  <div>
+                    <p className="lg:text-[20px] text-md mt-4 font-semibold leading-[30px] h-[60px] line-clamp-2">
+                      {item?.title}
+                    </p>
+                    <p className="my-[19px] lg:text-sm text-[12px] leading-[21px] font-normal h-10 line-clamp-2">
+                      {item?.description}
+                    </p>
+                    <div className="flex items-center gap-1 mt-4 group">
+                      <Image
+                        src={arrow}
+                        alt="Arrow Icon"
+                        className="h-3 transform -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                      />
+                      <p
+                        className="lg:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 -translate-x-6 group-hover:translate-x-2"
+                        onClick={() => router.push("/blogs")}
+                      >
+                        Read More
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                        
                     ))}
                 </div>
-                <p className='text-xl mt-6  underline decoration-1 cursor-pointer text-center lg:hidden font-semibold transition-transform duration-300 group-hover:translate-x-2' onClick={() => router.push('/blogs')}>View More</p>
+                <p className='text-xl mt-[32px]  underline decoration-1 cursor-pointer text-center lg:hidden font-semibold transition-transform duration-300 group-hover:translate-x-2' onClick={() => router.push('/blogs')}>View More</p>
             </div >
         </div>
     );

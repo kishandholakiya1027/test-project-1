@@ -17,15 +17,15 @@ export default function Vision() {
   };
 
   return (
-    <div className="lg:relative w-full lg:h-screen my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden">
+    <div className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden">
      {
      isDesktop ?      <div
-      className="lg:relative w-full max-w-[540px] h-full max-h-[400px]"
+      className="lg:relative w-full lg:max-w-[540px] h-full lg:max-h-[400px] flex flex-col-reverse"
       onMouseEnter={handleMouseEnter}
     >
       {/* Text behind the image */}
       <div
-        className={`lg:absolute inset-0 flex z-0 items-center justify-center transition-transform duration-[1500ms] ${transitioned ? 'translate-x-[56%]' : 'translate-x-0'}`}
+        className={`flex w-full lg:absolute inset-0 lg:hidden z-0 items-center justify-center transition-transform duration-[1500ms] ${transitioned ? 'translate-x-[0%]' : 'translate-x-0'}`}
       >
         <div className='flex flex-col justify-center'>
           <p className='text-3xl font-bold'>Our Vision</p>
@@ -37,11 +37,13 @@ export default function Vision() {
       </div>
 
       {/* Image in front of the text */}
-      <Image
-        src={transitioned ? vision : visionOld}
-        alt="New"
-        className={``}
-      />
+      <div className='h-[262px] mb-4 lg:mb-0'>
+        <Image
+          src={transitioned ? vision : visionOld}
+          alt="New"
+          className={`w-full h-full`}
+        />
+      </div>
     </div> : 
          <div
          className=""

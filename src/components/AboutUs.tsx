@@ -222,7 +222,7 @@ const Governance = () => {
 };
 
     return (
-        <div className="relative w-full mt-12 lg:mt-0 lg:h-screen">
+        <div className="relative w-full mt-12 lg:mt-0">
             {/* Background Image */}
             <Image
                 src={aboutMainImg}
@@ -234,12 +234,12 @@ const Governance = () => {
 
             {/* Content over the background */}
             <div className="relative z-10 lg:flex flex-wrap lg:gap-16 h-full lg:px-10 px-4 lg:py-10 py-6 text-[#fff]">
-                <div className={`${isDesktop ? '' : 'flex overflow-x-auto space-x-8'}`}>
+                <div className={`${isDesktop ? 'flex gap-[24px] md:block overflow-x-auto' : 'flex overflow-x-auto space-x-8'}`}>
                     {text?.map((data: any, index: any) => (
                         <div
                             key={index}
-                            className={`w-full lg:text-[24px] text-sm lg:pb-6 pb-5 ${index === 3 ? '' : 'lg:border-b border-[#B1B1B1]/40'} transition-transform duration-[1500ms] cursor-pointer ${data === select ? 'font-bold ' : 'text-[#B1B1B1]/40'
-                                } lg:mb-6`}
+                            className={`w-full lg:text-[24px] text-base lg:pb-[22px] pb-5 ${index === 3 ? '' : 'lg:border-b border-[#B1B1B1]/40'} transition-transform duration-[1500ms] cursor-pointer ${data === select ? 'font-bold ' : 'text-[#B1B1B1]/40'
+                                } lg:mb-[22px] text-nowrap`}
                             onClick={() => handleChange(data)}
                         >
                             <p className={`${data === select ? 'font-semibold' : '' }`}>{data}</p>

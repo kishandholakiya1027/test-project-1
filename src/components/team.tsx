@@ -80,21 +80,23 @@ const handleViewMore = () => {
   };
 
   return (
-    <div>
-        <div ref={aboutUsRef}  className='flex flex-col justify-center items-center lg:mt-28 mt-12' >
-        <h1 className="lg:text-[32px] text-md font-bold mb-4">Meet the Team</h1>
-        <p className='lg:text-[16px] text-sm mb-2 lg:mb-0 text-center' >Introducing the individuals making it happen</p>
+    <div className='lg:mt-28 mt-12'>
+        <div ref={aboutUsRef}  className='flex flex-col justify-center items-center' >
+        <h1 className="lg:text-[32px] text-md font-bold md:mb-4 mb-2">Meet the Team</h1>
+        <p className='lg:text-[16px] text-sm md:mb-2 lg:mb-0 text-center' >Introducing the individuals making it happen</p>
         </div >
-        <div className='grid grid-cols-4 gap-4'>
+        <div className='grid grid-cols-4 gap-6 md:mt-[40px] mt-[24px]'>
         {data.slice(0, visibleItems).map((item:any, index:number) => (
-            <div key={index} className='lg:col-span-1 col-span-2 mt-5  flex flex-col gap-1 ' >
-            <div className='bg-[#D9D9D9] lg:h-[297px] lg:w-[297px]  h-[166px] w-[163px] ' ></div>
-            <p className='lg:text-lg text-sm font-semibold' >{item?.name}</p>
-            <p className='lg:text-sm text-xs '>{item?.profile}</p>
+            <div key={index} className='lg:col-span-1 col-span-2 flex flex-col gap-2' >
+            <div className='bg-[#D9D9D9] lg:h-[297px] h-[166px] w-full' ></div>
+            <div>
+              <p className='lg:text-[20px] text-sm font-semibold' >{item?.name}</p>
+              <p className='lg:text-base text-xs '>{item?.profile}</p>
+            </div>
             </div>
           ))}
         </div>
-        <div className='flex flex-wrap items-center cursor-pointer justify-center mt-14 gap-2'>
+        <div className='flex flex-wrap items-center cursor-pointer justify-center md:mt-[48px] mt-[24px] gap-2'>
         <Image 
           src={expanded ? circleUp : circledown} 
           alt="Toggle Image" 

@@ -61,3 +61,11 @@ body {
   height: 444px;
   background-color: #fff; /* Make the center slide more prominent */
 }
+
+.news_media .slick-slide {
+  padding: 0;
+}
+.news_media .slick-list .slick-track{
+  display: flex;
+  gap: 22px;
+}

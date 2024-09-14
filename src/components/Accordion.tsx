@@ -8,12 +8,12 @@ function Accordion() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 640);
+    setIsDesktop(window.innerWidth > 768);
   }, []);
 
  
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth > 640);
+    const handleResize = () => setIsDesktop(window.innerWidth > 768);
     
     handleResize(); // Check initial screen size
     window.addEventListener('resize', handleResize);
@@ -38,13 +38,14 @@ function Accordion() {
     }
   };
 
+console.log("isDesktop",isDesktop);
 
   return (
-   <>{isDesktop  ?
-    <div className={`text-white mx-6`}>
+   <>
+    <div className={`text-white mx-6 overflow-x-auto ${isDesktop ? "hidden": "block"}`}>
       {/* Key Components */}
       <div
-    className={`absolute left-0 ml-1 lg:bottom-[80px] bottom-[53px] lg:w-[32%] w-[70%] py-4 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 0 ? "bg-black/70" : "bg-black/50"}`}
+    className={`absolute left-0 ml-1 lg:bottom-[80px] bottom-[53px] md:w-[50%] !h-auto lg:w-[32%] w-[70%] py-6 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 0 ? "bg-black/70" : "bg-black/50"}`}
     style={{ height: activeIndex === 0 ? "auto" : "69px" }}
   >
         <button
@@ -82,7 +83,7 @@ function Accordion() {
 
       {/* Benefits */}
       <div
-    className={`absolute lg:bottom-[80px] bottom-[53px] py-4 lg:w-[32%] w-[70%] lg:left-[34%] left-[40%] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 1 ? "bg-black/70" : "bg-black/50"}`}
+    className={`absolute lg:bottom-[80px] bottom-[53px] py-4 md:w-[50%] lg:w-[32%] w-[70%] lg:left-[34%] left-[40%] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 1 ? "bg-black/70" : "bg-black/50"}`}
     style={{ height: activeIndex === 1 ? "auto" : "69px" }}
   >
         <button
@@ -104,7 +105,7 @@ function Accordion() {
         <div
           className={`overflow-hidden transition-all duration-1000 ease-in-out  ${activeIndex === 1 ? "max-h-96" : "max-h-0"}`}
         >
-          <div className="flex flex-wrap lg:gap-20 gap-6 mb-4 mt-10 px-4">
+          <div className="flex flex-wrap lg:gap-18 gap-6 mb-4 mt-10 px-4">
             <div className="flex lg:text-md text-sm flex-col gap-5">
               <p>Regulatory Compliance</p>
               <p>Scalability</p>
@@ -120,7 +121,7 @@ function Accordion() {
 
       {/* Technology */}
       <div
-    className={`absolute lg:bottom-[80px] bottom-[53px] py-4 lg:w-[32%] w-[70%] lg:left-[68%] left-[70%] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 2 ? "bg-black/70" : "bg-black/50"}`}
+    className={`absolute lg:bottom-[80px] bottom-[53px] py-4 md:w-[50%] lg:w-[32%] w-[70%] lg:left-[68%] left-[70%] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 2 ? "bg-black/70" : "bg-black/50"}`}
     style={{ height: activeIndex === 2 ? "auto" : "69px" }}
   >
         <button
@@ -152,30 +153,19 @@ function Accordion() {
         </div>
       </div>
     </div>
-    :
    
-    <div className={` text-white mx-6`}>
+    <div className={` text-white mx-6 ${!isDesktop ? "block" : "hidden"}`}>
     <div
       className={`absolute left-0 ml-1 lg:bottom-[80px] bottom-[53px] lg:w-[410px] w-[315px] py-4 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 0 ? "bg-black/70" : "bg-black/50"
-        }`}
-      style={{ height: activeIndex === 0 ? "auto" : "69px" }} // Dynamically adjust height
+        }`} // Dynamically adjust height
     >
       <button
-        className="w-full text-left px-4 lg:text-2xl lg:font-bold font-semibold flex justify-between gap-10 items-center"
-        onClick={() => toggleAccordion(0)}
+        className="w-full text-left px-4 lg:text-2xl lg:font-[800] font-semibold flex justify-between gap-10 items-center"
       >
         Key Components
-        <span>
-          {activeIndex === 0 ? (
-            <Image src={closeImage} alt={"do not disturb"} />
-          ) : (
-            <Image src={openImage} alt={"add circle"} />
-          )}
-        </span>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-1000 ease-in-out ${activeIndex === 0 ? "max-h-96" : "max-h-0"
-          }`}
+        className={`overflow-hidden transition-all duration-1000 ease-in-out max-h-96`}
       >
         <div className="flex flex-wrap gap-16 mb-4 mt-10 px-4">
           <div className="flex lg:text-md text-sm flex-col gap-5">
@@ -194,25 +184,15 @@ function Accordion() {
     {/* Benefits */}
     <div
       className={` absolute lg:bottom-[80px] bottom-[53px] py-4 lg:w-[410px] w-[315px] lg:left-[429px] left-[325px] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 1 ? "bg-black/70" : "bg-black/50"
-        }`}
-      style={{ height: activeIndex === 1 ? "auto" : "69px" }} // Dynamically adjust height
+        }`} // Dynamically adjust height
     >
       <button
         className="w-full text-left lg:text-2xl lg:font-bold font-semibold px-4 flex justify-between items-center"
-        onClick={() => toggleAccordion(1)}
       >
         Benefits
-        <span>
-          {activeIndex === 1 ? (
-            <Image src={closeImage} alt={"do not disturb"} />
-          ) : (
-            <Image src={openImage} alt={"add circle"} />
-          )}
-        </span>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-1000 ease-in-out ${activeIndex === 1 ? "max-h-96" : "max-h-0"
-          }`}
+        className={`overflow-hidden transition-all duration-1000 ease-in-out max-h-96`}
       >
         <div className="flex flex-wrap lg:gap-20 gap-6 mb-4 mt-10 px-4">
           <div className="flex lg:text-md text-sm flex-col gap-5">
@@ -231,25 +211,15 @@ function Accordion() {
     {/* Technology */}
     <div
       className={` absolute ${isDesktop ? 'right-0 ' : 'left-[41rem] '} lg:w-[410px] w-[315px] lg:bottom-[80px] bottom-[53px] py-4 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 2 ? "bg-black/70" : "bg-black/50"
-        }`}
-      style={{ height: activeIndex === 2 ? "auto" : "69px" }} // Dynamically adjust height
+        }`} // Dynamically adjust height
     >
       <button
         className="w-full text-left lg:text-2xl lg:font-bold font-semibold px-4 flex justify-between items-center"
-        onClick={() => toggleAccordion(2)}
       >
         Technology
-        <span>
-          {activeIndex === 2 ? (
-            <Image src={closeImage} alt={"do not disturb"} />
-          ) : (
-            <Image src={openImage} alt={"add circle"} />
-          )}
-        </span>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-1000 ease-in-out ${activeIndex === 2 ? "max-h-96" : "max-h-0"
-          }`}
+        className={`overflow-hidden transition-all duration-1000 ease-in-out max-h-96`}
       >
         <div className="flex flex-wrap gap-20 mb-4 mt-10 px-4">
           <div className="flex lg:text-md text-sm flex-col gap-5">
@@ -260,7 +230,7 @@ function Accordion() {
         </div>
       </div>
     </div>
-  </div>}
+  </div>
    
    </>
    

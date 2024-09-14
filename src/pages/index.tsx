@@ -72,7 +72,7 @@ export default function Home() {
     <>
       <div className="w-full">
         <Header />
-        <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-[20px] lg:px-0">
+        <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
           <div
             className="relative"
             onMouseOver={handleMouseOver}
@@ -90,7 +90,7 @@ export default function Home() {
               <div className="text-[#fff] xl:text-[48px] lg:text-[40px] sm:text-[32px] text-[24px] xl:leading-[56px] lg:leading-[48px] sm:leading-[40px] leading-[28px]">Empowering Global Digital Equity</div>
             </div>
           </div>
-          <div className="lg:grid grid-cols-3 lg:mt-28 mt-6">
+          <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]">
             <div className="col-span-1">
               <p className="lg:text-[32px] text-md font-bold">
                 About KALP Foundation

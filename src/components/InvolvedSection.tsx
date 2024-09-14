@@ -33,26 +33,26 @@ const GetInvolvedSection: React.FC = () => {
     };
   }, []);
   return (
-    <div className="flex flex-col items-center justify-center bg-black lg:py-16 py-6 lg:mt-36 mt-12 px-3">
-      <h2 className="text-center bg-white text-black lg:text-[20px] lg:px-5 px-2 py-3 mb-4">
+    <div className="flex flex-col items-center justify-center bg-black lg:pt-[40px] lg:pb-[50px] pb-[40px] py-6 lg:mt-[120px] mt-12 md:px-3 px-2">
+      <h2 className="text-center bg-white text-black lg:text-[20px] lg:px-[24px] px-2 py-[16px] mb-4">
         GET INVOLVED WITH KALP FOUNDATION
       </h2>
-      <p className="text-white  text-center lg:text-[16px] text-sm mb-12 lg:px-36 px-2">
+      <p className="text-white  text-center lg:text-[16px] text-sm md:mb-[62px] mb-[40px] lg:px-36 px-2">
         Ready to shape the future of digital empowerment and inclusivity? Join us
         at the KALP Foundation and be a part of the transformative journey towards
         a decentralized digital public infrastructure. Here&apos;s how you can get involved:
       </p>
-      <div className={`flex ${isDesktop ? 'flex-wrap':'flex-col'} items-center justify-center gap-1`}>
-  <div ref={box1}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-16 px-5 w-[252px] transition-all duration-100 ease-in-out">
+      <div className={`flex ${isDesktop ? 'flex-wrap flex-col':'flex-col'} items-center justify-center gap-1`}>
+  <div ref={box1}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-14 px-5 w-[252px] transition-all duration-100 ease-in-out">
     Engage with the Community
   </div>
   <div className="bg-[#191919] h-[28px] w-[7px] lg:w-[28px] lg:h-[7px]"></div>
-  <div ref={box2}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-16 px-8 w-[252px] transition-all duration-100 ease-in-out">
+  <div ref={box2}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-14 px-8 w-[252px] transition-all duration-100 ease-in-out">
     Contribute to Development
   </div>
   <div className="bg-[#191919] h-[28px] w-[7px] lg:w-[28px] lg:h-[7px]"></div>
   
-  <div ref={box3}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-16 px-8 w-[252px] transition-all duration-100 ease-in-out">
+  <div ref={box3}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-14 px-8 w-[252px] transition-all duration-100 ease-in-out">
     Spread the Word
   </div>
 </div>

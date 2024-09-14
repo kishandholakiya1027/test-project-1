@@ -96,6 +96,23 @@ const StrategicInitiatives: React.FC = () => {
 
       backgroundImage: slideImg
     },
+    {
+      title: 'KALP Ecosystem Development',
+      description: 'Continuously evolving our permissioned Distributed Ledger Technology (DLT) platform., Enhancing the Kalp Virtual Machine (KVM) for optimized transaction throughput.',
+
+      backgroundImage: slideImg
+    },
+    {
+      title: 'Kalpify Platform',
+      description: 'Continuously evolving our permissioned Distributed Ledger Technology (DLT) platform., Enhancing the Kalp Virtual Machine (KVM) for optimized transaction throughput.',
+      backgroundImage: slideImg
+    },
+    {
+      title: 'KALP Studio',
+      description: 'Continuously evolving our permissioned Distributed Ledger Technology (DLT) platform., Enhancing the Kalp Virtual Machine (KVM) for optimized transaction throughput.',
+
+      backgroundImage: slideImg
+    },
 
   ];
   const goToNext = () => {
@@ -113,10 +130,10 @@ const StrategicInitiatives: React.FC = () => {
     <>
       {isDesktop ?
 
-        <div className="relative lg:mt-28 mt-12 bg-black">
+        <div className="relative lg:mt-[120px] mt-12 bg-black overflow-hidden">
           {isDesktop ? <Image className="absolute z-0" src={aboutMainImg} alt="" /> : null}
-          <div className="relative z-10 text-white py-10">
-            <h2 className="position opacity-1 text-center lg:text-[32px] text-lg font-bold lg:mb-20 mb-6 lg:mt-8 mt-2">
+          <div className="relative z-10 text-white pt-[56px] pb-[37px]">
+            <h2 className="position opacity-1 text-center lg:text-[32px] text-lg font-bold mb-[60px]">
               Strategic Initiatives
             </h2>
 
@@ -163,7 +180,7 @@ const StrategicInitiatives: React.FC = () => {
             )}
 
             {/* Custom Pagination */}
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center mt-6 z-30 relative">
               <button
                 onClick={goToPrev}
                 className="px-4 py-2 bg-[#393939] text-white rounded-l-full hover:bg-gray-600 transition cursor-pointer duration-300"
