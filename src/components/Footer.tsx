@@ -13,9 +13,9 @@ const Footer: React.FC<FooterProps> = (props) => {
     setIsDesktop(window.innerWidth > 640);
   }, []);
   return (
-    <footer className="bg-[#000] md:mt-[130px] mt-[50px] px-4">
-      <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-[20px] md:px-0">
-        <div className="grid md:grid-cols-3 grid-cols-5 font-thin w-full text-[#fff] pt-[15px] pb-10 md:py-6">
+    <footer className="bg-[#000]">
+      <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
+        <div className="grid md:grid-cols-3 grid-cols-5 font-thin md:mt-[130px] mt-[49px] w-full text-[#fff] pt-[15px] pb-10 md:py-6">
           <div className="col-span-3 order-2 md:order-1 md:col-span-1">
             <div>
               <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">

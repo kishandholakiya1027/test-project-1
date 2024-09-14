@@ -87,7 +87,9 @@ export default function Home() {
               ref={imageRef}
             />
             <div className="sm:max-h-[248px] max-h-[216px] max-w-[213px] sm:py-[40px] sm:px-[24px] p-[16px] sm:max-w-[485px] bg-[#00000099] absolute sm:bottom-4 sm:left-4 bottom-2 left-2">
-              <div className="text-[#fff] xl:text-[48px] lg:text-[40px] sm:text-[32px] text-[24px] xl:leading-[56px] lg:leading-[48px] sm:leading-[40px] leading-[28px]">Empowering Global Digital Equity</div>
+              <div className="text-[#fff] xl:text-[48px] lg:text-[40px] sm:text-[32px] text-[24px] xl:leading-[56px] lg:leading-[48px] sm:leading-[40px] leading-[28px]">
+                Empowering Global Digital Equity
+              </div>
             </div>
           </div>
           <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]">
@@ -104,8 +106,9 @@ export default function Home() {
                 <p className="lg:text-[14px] text-xs mt-2 leading-[21px]">
                   The Kalp Decentra Foundation stands at the forefront of the
                   blockchain revolution, pioneering a new era of Digital Public
-                  Infrastructure. We are not just building technology; we&apos;re
-                  architecting the future of global digital interaction.
+                  Infrastructure. We are not just building technology;
+                  we&apos;re architecting the future of global digital
+                  interaction.
                 </p>
                 <div className="lg:text-[14px] text-xs">
                   <p className="leading-[21px]">
@@ -113,7 +116,9 @@ export default function Home() {
                     as secure as it is inclusive, as innovative as it is
                     compliant.
                   </p>
-                  <p className="font-bold leading-[21px]">At Kalp, we believe in:</p>
+                  <p className="font-bold leading-[21px]">
+                    At Kalp, we believe in:
+                  </p>
                   <div className="flex flex-col leading-[21px]">
                     <p>• Decentralization with accountability</p>
                     <p>• Innovation within regulatory frameworks</p>
@@ -121,21 +126,21 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="lg:text-[14px] text-xs leading-[21px]">
-                  We&apos;re unique in our &apos;compliance-first&apos; approach,
-                  embedding regulatory adherence into our DNA. Our ecosystem
-                  isn&apos;t just about technology; it&apos;s about empowering
-                  communities, fostering innovation, and creating a level
-                  playing field in the digital realm.
+                  We&apos;re unique in our &apos;compliance-first&apos;
+                  approach, embedding regulatory adherence into our DNA. Our
+                  ecosystem isn&apos;t just about technology; it&apos;s about
+                  empowering communities, fostering innovation, and creating a
+                  level playing field in the digital realm.
                 </p>
               </div>
             </div>
           </div>
           <Vision />
           <AboutUs />
-          <Dpi/>
+          <Dpi />
           <EcoSystem />
           <GiniToken />
-          <StrategicInitiatives/>
+          <StrategicInitiatives />
           <Team />
           <NewsMedia />
           <Blogs />

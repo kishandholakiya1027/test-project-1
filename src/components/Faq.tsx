@@ -60,7 +60,7 @@ const Faq: React.FC = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center md:mt-[122px] mt-12">
+      <div className="flex flex-col justify-center items-center md:mt-[122px] mt-20">
         <h1 className="md:text-[32px] text-[16px] text-md font-bold md:leading-[48px] leading-6 md:mb-4 mb-2">
           Frequently Asked Questions
         </h1>
