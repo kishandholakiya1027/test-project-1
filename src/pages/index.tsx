@@ -137,7 +137,7 @@ export default function Home() {
           </div>
           <Vision />
           <AboutUs />
-          <Dpi />
+          <Dpi/>
           <EcoSystem />
           <GiniToken />
           <StrategicInitiatives />

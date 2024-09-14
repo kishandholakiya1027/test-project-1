@@ -10,7 +10,7 @@ interface FooterProps {}
 const Footer: React.FC<FooterProps> = (props) => {
   const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 640);
+    setIsDesktop(window.innerWidth > 768);
   }, []);
   return (
     <footer className="bg-[#000]">

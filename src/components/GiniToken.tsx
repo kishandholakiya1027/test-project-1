@@ -8,7 +8,7 @@ export default function GiniToken() {
   const [src, setSrc] = useState<any>(giniToken);
   const [isDesktop, setIsDesktop] = useState(false);
     useEffect(() => {
-        setIsDesktop(window.innerWidth > 640);
+        setIsDesktop(window.innerWidth > 768);
     }, []);
     return (
         <div className='lg:mt-[120px] mt-12'>
@@ -68,6 +68,8 @@ export default function GiniToken() {
                 <p className="lg:text-[32px] font-bold" >The Kalp ecosystem offers a game-changing solution.</p>
                 <p className='lg:text-[16px] text-[13px] lg:px-6 '>It seamlessly merges the best of permissionless and permissioned networks, ensuring regulatory compliance without sacrificing decentralization. Governed by the Kalp Foundation and accessed via the <span className='font-bold' >{`"Gini"`}</span> token.</p>
             </div>
+            {
+              !isDesktop && 
             <div className='max-w-[530px] lg:hidden mt-4 mx-auto' 
                   onMouseOver={()=>setSrc(giniColoured)}
                   onMouseOut={()=>setSrc(giniToken) }
@@ -80,6 +82,7 @@ export default function GiniToken() {
 
                 className="transition-transform duration-4000 ease-in-out lg:max-w-[530px] max-h-[300px] "/>
                 </div>
+            }
                 <div className="lg:flex lg:gap-[62px] gap-6 items-center lg:px-4 px-2 justify-between lg:mt-10 mt-4">
   {/* Text Section */}
   <div className="lg:w-1/2 w-full">
@@ -105,7 +108,7 @@ export default function GiniToken() {
   </div>
 
   {/* Image Section */}
-  <div className="lg:w-1/2 w-full hidden">
+  <div className="lg:w-1/2 w-full">
     {isDesktop ? (
       <div
         className="max-w-full"

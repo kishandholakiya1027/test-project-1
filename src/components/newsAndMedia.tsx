@@ -35,13 +35,13 @@ const NewsMedia = () => {
 console.log(prevClicked)
 console.log(nextClicked)
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 640);
-    setSetting(window.innerWidth > 640 ? settings : mobSettings);
+    setIsDesktop(window.innerWidth > 768);
+    setSetting(window.innerWidth > 768 ? settings : mobSettings);
   }, [settig]);
 
   const PrevArrow = ({ onClick }: any) => (
     <div 
-      className={`absolute ${window.innerWidth > 640 ? 'top-[-70px] right-[44px]' : 'left-[158px] bottom-[-42px]'} z-10 cursor-pointer`}
+      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-[44px]' : 'left-[100px] bottom-[-42px]'} z-10 cursor-pointer`}
       onClick={() => { onClick(),  
         setPrevClicked(true);
         setNextClicked(false); }}
@@ -52,7 +52,7 @@ console.log(nextClicked)
 
   const NextArrow = ({ onClick }: any) => (
     <div 
-      className={`absolute ${window.innerWidth > 640 ? 'top-[-70px] right-0' : 'bottom-[-42px] right-[160px]'} z-10 cursor-pointer`}
+      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-0' : 'bottom-[-42px] right-[160px]'} z-10 cursor-pointer`}
       onClick={() => { onClick();  
          setNextClicked(true);
         setPrevClicked(false);}}

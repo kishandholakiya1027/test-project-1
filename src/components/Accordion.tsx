@@ -19,9 +19,12 @@ function Accordion() {
     window.addEventListener('resize', handleResize);
     
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [isDesktop]);
 
   const toggleAccordion = (index: number) => {
+    if(!isDesktop){
+      return
+    }
     if (index === activeIndex) return; // Prevent re-opening the already open section
 
     // Automatically open the next section
@@ -38,123 +41,127 @@ function Accordion() {
     }
   };
 
-console.log("isDesktop",isDesktop);
-
   return (
    <>
-    <div className={`text-white mx-6 overflow-x-auto ${isDesktop ? "hidden": "block"}`}>
+    <div className={`text-white lg:mx-6 mx-3 overflow-x-auto lg:gap-8 gap-4 items-end flex`}>
       {/* Key Components */}
-      <div
-    className={`absolute left-0 ml-1 lg:bottom-[80px] bottom-[53px] md:w-[50%] !h-auto lg:w-[32%] w-[70%] py-6 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 0 ? "bg-black/70" : "bg-black/50"}`}
-    style={{ height: activeIndex === 0 ? "auto" : "69px" }}
-  >
-        <button
-          className="w-full text-left px-4 lg:text-2xl lg:font-bold font-semibold flex justify-between gap-10 items-center"
-          onClick={() => toggleAccordion(0)}
-        >
-          Key Components
-          <span>
-            {activeIndex === 0 ? (
-              <div onClick={handleCheck} >
-              <Image src={closeImage} alt={"do not disturb"} />
-
-              </div>
-            ) : (
-              <Image src={openImage} alt={"add circle"} />
-            )}
-          </span>
-        </button>
+      <div className="md:w-[100%] lg:w-[70%] w-full">
         <div
-          className={`overflow-hidden transition-all duration-1000 ease-in-out ${activeIndex === 0 ? "max-h-96" : "max-h-0"}`}
-        >
-          <div className="flex flex-wrap gap-16 mb-4 mt-10 px-4">
-            <div className="flex lg:text-md text-sm flex-col gap-5">
-              <p>Kalp Compiler</p>
-              <p>Kalp Conjurer</p>
-              <p>Kalp Insight</p>
-            </div>
-            <div className="flex flex-col gap-5">
-              <p>Kalp Wallet</p>
-              <p>Kalp Explorer</p>
+      className={`lg:w-full w-[300px] py-6 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 0 ? "bg-black/70" : "bg-black/50"}`}
+      // style={{ height: activeIndex === 0 ? "auto" : "69px" }}
+    >
+          <button
+            className="w-full text-left px-4 lg:text-2xl lg:font-bold font-semibold flex justify-between gap-10 items-center"
+            onClick={() => toggleAccordion(0)}
+          >
+            Key Components
+            <span className={`${!isDesktop ? "hidden" : "block"}`}>
+              {activeIndex === 0 ? (
+                <div onClick={handleCheck} >
+                <Image src={closeImage} alt={"do not disturb"} />
+
+                </div>
+              ) : (
+                <Image src={openImage} alt={"add circle"} />
+              )}
+            </span>
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-1000 ease-in-out ${isDesktop ? activeIndex === 0 ? "max-h-96" : "max-h-0" : "max-h-auto"}`}
+          >
+            <div className="flex flex-wrap gap-16 mb-4 mt-10 px-4">
+              <div className="flex lg:text-md text-sm flex-col gap-5">
+                <p>Kalp Compiler</p>
+                <p>Kalp Conjurer</p>
+                <p>Kalp Insight</p>
+              </div>
+              <div className="flex flex-col gap-5">
+                <p>Kalp Wallet</p>
+                <p>Kalp Explorer</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Benefits */}
-      <div
-    className={`absolute lg:bottom-[80px] bottom-[53px] py-4 md:w-[50%] lg:w-[32%] w-[70%] lg:left-[34%] left-[40%] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 1 ? "bg-black/70" : "bg-black/50"}`}
-    style={{ height: activeIndex === 1 ? "auto" : "69px" }}
-  >
-        <button
-          className="w-full text-left lg:text-2xl lg:font-bold font-semibold px-4 flex justify-between items-center"
-          onClick={() => toggleAccordion(1)}
-        >
-          Benefits
-          <span>
-            {activeIndex === 1 ? (
-              <div onClick={handleCheck} >
-              <Image src={closeImage} alt={"do not disturb"} />
-
-              </div>
-            ) : (
-              <Image src={openImage} alt={"add circle"} />
-            )}
-          </span>
-        </button>
+      <div className="md:w-[100%] lg:w-[70%] w-full">        
         <div
-          className={`overflow-hidden transition-all duration-1000 ease-in-out  ${activeIndex === 1 ? "max-h-96" : "max-h-0"}`}
-        >
-          <div className="flex flex-wrap lg:gap-18 gap-6 mb-4 mt-10 px-4">
-            <div className="flex lg:text-md text-sm flex-col gap-5">
-              <p>Regulatory Compliance</p>
-              <p>Scalability</p>
-              <p>Interoperability</p>
-            </div>
-            <div className="flex flex-col gap-5">
-              <p>Security</p>
-              <p>Inclusivity</p>
+      className={`lg:w-full w-[300px] py-6 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 1 ? "bg-black/70" : "bg-black/50"}`}
+      // style={{ height: activeIndex === 1 ? "auto" : "69px" }}
+    >
+          <button
+            className="w-full text-left lg:text-2xl lg:font-bold font-semibold px-4 flex justify-between items-center"
+            onClick={() => toggleAccordion(1)}
+          >
+            Benefits
+            <span className={`${!isDesktop ? "hidden" : "block"}`}>
+              {activeIndex === 1 ? (
+                <div onClick={handleCheck} >
+                <Image src={closeImage} alt={"do not disturb"} />
+
+                </div>
+              ) : (
+                <Image src={openImage} alt={"add circle"} />
+              )}
+            </span>
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-1000 ease-in-out ${isDesktop ? activeIndex === 1 ? "max-h-96" : "max-h-0" : "max-h-auto"}`}
+          >
+            <div className="flex flex-wrap lg:gap-18 gap-6 mb-4 mt-10 px-4">
+              <div className="flex lg:text-md text-sm flex-col gap-5">
+                <p>Regulatory Compliance</p>
+                <p>Scalability</p>
+                <p>Interoperability</p>
+              </div>
+              <div className="flex flex-col gap-5">
+                <p>Security</p>
+                <p>Inclusivity</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Technology */}
-      <div
-    className={`absolute lg:bottom-[80px] bottom-[53px] py-4 md:w-[50%] lg:w-[32%] w-[70%] lg:left-[68%] left-[70%] transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 2 ? "bg-black/70" : "bg-black/50"}`}
-    style={{ height: activeIndex === 2 ? "auto" : "69px" }}
-  >
-        <button
-          className="w-full text-left lg:text-2xl lg:font-bold font-semibold px-4 flex justify-between items-center"
-          onClick={() => toggleAccordion(2)}
-        >
-          Technology
-          <span>
-            {activeIndex === 2 ? (
-               <div onClick={handleCheck} >
-               <Image src={closeImage} alt={"do not disturb"} />
- 
-               </div>
-            ) : (
-              <Image src={openImage} alt={"add circle"} />
-            )}
-          </span>
-        </button>
+      <div className="md:w-[100%] lg:w-[70%] w-full">
         <div
-          className={`overflow-hidden transition-all duration-1000 ease-in-out ${activeIndex === 2 ? "max-h-96" : "max-h-0"}`}
-        >
-          <div className="flex flex-wrap gap-20 mb-4 mt-10 px-4">
-            <div className="flex lg:text-md text-sm flex-col gap-5">
-              <p>Modular Architecture</p>
-              <p>Smart Contract Capabilities</p>
-              <p>Cross-Chain Interoperability</p>
+      className={`lg:w-full w-[300px] py-6 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 2 ? "bg-black/70" : "bg-black/50"}`}
+      // style={{ height: activeIndex === 2 ? "auto" : "69px" }}
+    >
+          <button
+            className="w-full text-left lg:text-2xl lg:font-bold font-semibold px-4 flex justify-between items-center"
+            onClick={() => toggleAccordion(2)}
+          >
+            Technology
+            <span className={`${!isDesktop ? "hidden" : "block"}`}>
+              {activeIndex === 2 ? (
+                <div onClick={handleCheck} >
+                <Image src={closeImage} alt={"do not disturb"} />
+  
+                </div>
+              ) : (
+                <Image src={openImage} alt={"add circle"} />
+              )}
+            </span>
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-1000 ease-in-out  ${isDesktop ? activeIndex === 2 ? "max-h-96" : "max-h-0" : "max-h-auto"}`}
+          >
+            <div className="flex flex-wrap gap-20 mb-4 mt-10 px-4">
+              <div className="flex lg:text-md text-sm flex-col gap-5">
+                <p>Modular Architecture</p>
+                <p>Smart Contract Capabilities</p>
+                <p>Cross-Chain Interoperability</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
    
-    <div className={` text-white mx-6 ${!isDesktop ? "block" : "hidden"}`}>
+    <div className={` text-white mx-6 hidden`}>
     <div
       className={`absolute left-0 ml-1 lg:bottom-[80px] bottom-[53px] lg:w-[410px] w-[315px] py-4 transition-all duration-1000 ease-in-out backdrop-blur-sm ${activeIndex === 0 ? "bg-black/70" : "bg-black/50"
         }`} // Dynamically adjust height

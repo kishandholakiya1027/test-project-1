@@ -14,7 +14,7 @@ const Blogs: React.FC = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Hover state
 
     useEffect(() => {
-        setIsDesktop(window.innerWidth > 640);
+        setIsDesktop(window.innerWidth > 768);
     }, []);
     const router = useRouter();
     let data = [{

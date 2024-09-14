@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 const GetInvolvedSection: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
-      setIsDesktop(window.innerWidth > 640);
+      setIsDesktop(window.innerWidth > 768);
   }, []);
   const box1 = useRef(null);
   const box2 = useRef(null);
@@ -31,7 +31,11 @@ const GetInvolvedSection: React.FC = () => {
         box.removeEventListener('mouseleave', () => {});
       });
     };
-  }, []);
+  }, [isDesktop]);
+
+
+  console.log("isDesktop", isDesktop);
+  
   return (
     <div className="flex flex-col items-center justify-center bg-black lg:pt-[40px] lg:pb-[50px] pb-[40px] py-6 lg:mt-[120px] mt-12 md:px-3 px-2">
       <h2 className="text-center bg-white text-black lg:text-[20px] lg:px-[24px] px-2 py-[16px] mb-4">
@@ -42,7 +46,7 @@ const GetInvolvedSection: React.FC = () => {
         at the KALP Foundation and be a part of the transformative journey towards
         a decentralized digital public infrastructure. Here&apos;s how you can get involved:
       </p>
-      <div className={`flex ${isDesktop ? 'flex-wrap flex-col':'flex-col'} items-center justify-center gap-1`}>
+      <div className={`flex ${!isDesktop ? 'flex-wrap flex-col':''} items-center justify-center gap-1`}>
   <div ref={box1}  className="bg-[#191919] text-white lg:text-[24px] border border-[#191919] hover:border hover:border-white/30 text-xl text-center py-14 px-5 w-[252px] transition-all duration-100 ease-in-out">
     Engage with the Community
   </div>

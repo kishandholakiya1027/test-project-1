@@ -22,7 +22,7 @@ const AboutUs: React.FC = () => {
     const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect(() => {
-        setIsDesktop(window.innerWidth > 640);
+        setIsDesktop(window.innerWidth > 768);
     }, []);
     let text = ['OUR STORY', 'FOUNDING MEMBERS', 'OUR VALUES', 'GOVERNANCE FRAMEWORK']
 

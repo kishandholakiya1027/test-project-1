@@ -15,8 +15,8 @@ const StrategicInitiatives: React.FC = () => {
   const [setting, setSettings] = useState<any>(); // To track the current center slide
 
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 640);
-    setSettings(window.innerWidth > 640 ? settings : mobSettings);
+    setIsDesktop(window.innerWidth > 768);
+    setSettings(window.innerWidth > 768 ? settings : mobSettings);
   }, [hoveredIndex]);
   const [activeSlide, setActiveSlide] = useState(0);
   const settings = {

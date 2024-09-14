@@ -24,7 +24,7 @@ export default function Blogs() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 640);
+    setIsDesktop(window.innerWidth > 768);
   }, []);
   const totalPages = 10; // Total number of pages
 

@@ -8,7 +8,7 @@ export default function Vision() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 640);
+    setIsDesktop(window.innerWidth > 768);
   }, []);
   const handleMouseEnter = () => {
     if (!transitioned) {
