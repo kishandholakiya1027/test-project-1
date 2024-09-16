@@ -12,8 +12,8 @@ import blogMainMob from "../../public/images/blogMobile.jpg";
 import blogMainMob2 from "../../public/images/blogMobile2.jpg";
 import blogMainMob3 from "../../public/images/blogMobile3.jpg";
 import blogMainMob4 from "../../public/images/blogMobile4.jpg";
-import arrowLeft from "../../public/images/arrow-left.svg";
-import arrowRight from "../../public/images/arrow-right.svg";
+import arrowLeft from "../../public/images/east-2.svg";
+import arrowRight from "../../public/images/east-2.svg";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Faq from "@/components/Faq";
@@ -308,7 +308,7 @@ export default function Blogs() {
                 className="flex items-center text-gray-900 hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={currentPage === 1}
               >
-                <Image src={arrowLeft} alt="Previous" className="h-3 w-3" />
+                <Image src={arrowLeft} alt="Previous" className="h-3 w-3 rotate-180" />
                 <span className="hidden sm:block ml-2 text-sm font-[500] leading-5">
                   Previous
                 </span>
