@@ -2,14 +2,28 @@ import { useEffect, useState } from "react";
 import vision from "../../public/images/vision2.jpg";
 import visionOld from "../../public/images/oldVision.jpg";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 export default function Vision() {
   const [transitioned, setTransitioned] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
   useEffect(() => {
     setIsDesktop(window.innerWidth > 768);
   }, []);
+
+  useEffect(() => {
+    if(inView){
+      setTransitioned(true)
+    }else{
+      setTransitioned(false)
+    }
+  }, [inView])
   const handleMouseEnter = () => {
     if (!transitioned) {
       setTransitioned(true);
@@ -17,21 +31,21 @@ export default function Vision() {
   };
 
   return (
-    <div className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden">
+    <div ref={ref} className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden">
       {isDesktop ? (
         <div
-          onMouseEnter={handleMouseEnter}
+          // onMouseEnter={handleMouseEnter}
           className="flex min-h-[417px] justify-between items-center w-full"
         >
           <div
-            className={`max-w-[48%] absolute z-20 duration-[1500ms] overflow-hidden ${
+            className={`max-w-[48%] absolute z-10 duration-[1500ms] overflow-hidden ${
               transitioned ? "left-0" : "left-2/4 -translate-x-2/4"
             } `}
           >
             <Image
               src={transitioned ? vision : visionOld}
               alt="New"
-              className={`${transitioned ? "w-full" : "w-[418px] grayscale-0"} transition-all duration-1500 ease-in-out ml-4 lg:ml-0 grp  min-h-[417px] object-cover`}
+              className={`${transitioned ? "w-full" : "w-[418px] grayscale-0"} transition-all duration-[1500ms] ease-in-out ml-4 lg:ml-0 grp  min-h-[417px] object-cover`}
             />
           </div>
           <div
