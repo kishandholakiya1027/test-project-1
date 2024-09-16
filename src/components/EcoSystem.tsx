@@ -3,7 +3,7 @@ import ecoImg from "../../public/images/eco.jpg";
 import cecoImg from "../../public/images/ceco.jpg";
 import ecoImage from "../../public/images/ecoMobile.jpg";
 import dynamic from "next/dynamic";
-import arrow from "../../public/images/whiteArrow.svg";
+import arrow from "../../public/images/east.svg";
 import { useEffect, useState } from "react";
 import Accordion from "./Accordion";
 
