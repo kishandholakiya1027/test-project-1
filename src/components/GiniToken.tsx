@@ -11,7 +11,7 @@ export default function GiniToken() {
         setIsDesktop(window.innerWidth > 768);
     }, []);
     return (
-        <div className='lg:mt-[120px] mt-12'>
+        <div className='lg:mt-[120px] mt-12' id='gini'>
             <div className="lg:flex items-center justify-center w-full">
                 <div className="flex md:justify-between items-center lg:w-[40%] justify-center">
                    {/* Left Line */}

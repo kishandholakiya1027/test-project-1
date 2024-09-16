@@ -22,6 +22,12 @@ const Footer: React.FC<FooterProps> = (props) => {
       aboutElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const scrollToGini = () => {
+    const aboutElement = document.getElementById('gini');
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <footer className="bg-[#000]">
       <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
@@ -67,7 +73,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                   <li className="md:text-[14px] text-[12px] leading-[30px] md:mt-2 font-normal md:order-none order-2">
                     KALP Network
                   </li>
-                  <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-4">
+                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-4" onClick={scrollToGini}>
                     GINI: Digital Currency
                   </li>
                   <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-6" onClick={() => router.push("/blogs")}>
