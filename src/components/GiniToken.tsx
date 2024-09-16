@@ -13,7 +13,7 @@ export default function GiniToken() {
     return (
         <div className='lg:mt-[120px] mt-12'>
             <div className="lg:flex items-center justify-center w-full">
-                <div className="flex justify-between items-center lg:w-[40%] ">
+                <div className="flex md:justify-between items-center lg:w-[40%] justify-center">
                    {/* Left Line */}
 <div className="relative h-[1px] w-[30%] hidden lg:block">
   <div className="absolute inset-0 bg-black"></div>
