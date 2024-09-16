@@ -18,7 +18,7 @@ export default function Vision() {
   }, []);
 
   useEffect(() => {
-    if(inView){
+    if(inView && isDesktop){
       setTransitioned(true)
     }else{
       setTransitioned(false)
