@@ -1,7 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="31px" height="30px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g><path style="opacity:0.97" fill="#1a1a1a" d="M 1.5,-0.5 C 10.5,-0.5 19.5,-0.5 28.5,-0.5C 28.8333,0.5 29.5,1.16667 30.5,1.5C 30.5,9.83333 30.5,18.1667 30.5,26.5C 29.5987,27.2905 28.9321,28.2905 28.5,29.5C 19.5,29.5 10.5,29.5 1.5,29.5C 1.06795,28.2905 0.40128,27.2905 -0.5,26.5C -0.5,18.5 -0.5,10.5 -0.5,2.5C 0.40128,1.70951 1.06795,0.709515 1.5,-0.5 Z"/></g>
-<g><path style="opacity:1" fill="#f8f8f8" d="M 16.5,23.5 C 15.5,23.5 14.5,23.5 13.5,23.5C 13.5,20.5 13.5,17.5 13.5,14.5C 12.5,14.5 11.5,14.5 10.5,14.5C 10.5,13.5 10.5,12.5 10.5,11.5C 11.5,11.5 12.5,11.5 13.5,11.5C 12.1667,5.5 14.5,3.16667 20.5,4.5C 20.5,5.5 20.5,6.5 20.5,7.5C 19.1667,7.5 17.8333,7.5 16.5,7.5C 16.5,8.83333 16.5,10.1667 16.5,11.5C 17.5,11.5 18.5,11.5 19.5,11.5C 19.5,12.5 19.5,13.5 19.5,14.5C 18.5,14.5 17.5,14.5 16.5,14.5C 16.5,17.5 16.5,20.5 16.5,23.5 Z"/></g>
-<g><path style="opacity:1" fill="#6d6d6d" d="M 10.5,11.5 C 10.5,12.5 10.5,13.5 10.5,14.5C 11.5,14.5 12.5,14.5 13.5,14.5C 13.5,17.5 13.5,20.5 13.5,23.5C 14.5,23.5 15.5,23.5 16.5,23.5C 15.4324,24.4345 14.099,24.7678 12.5,24.5C 12.5,21.5 12.5,18.5 12.5,15.5C 11.5,15.5 10.5,15.5 9.5,15.5C 9.23219,13.901 9.56552,12.5676 10.5,11.5 Z"/></g>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_957_7807)">
+<rect width="24" height="24" rx="5" fill="white" fill-opacity="0.1"/>
+</g>
+<path d="M13.2293 19.4222L13.2293 12.3879L15.5895 12.3879L15.9436 9.64572L13.2293 9.64572L13.2293 7.89523C13.2293 7.10155 13.4488 6.56067 14.5882 6.56067L16.0391 6.56007L16.0391 4.10736C15.7882 4.07476 14.9269 4 13.9245 4C11.8312 4 10.3982 5.2777 10.3982 7.62365L10.3982 9.64572L8.03085 9.64572L8.03085 12.3879L10.3982 12.3879L10.3982 19.4222L13.2293 19.4222Z" fill="white"/>
+<defs>
+<filter id="filter0_b_957_7807" x="-20" y="-20" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="10"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_957_7807"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_957_7807" result="shape"/>
+</filter>
+</defs>
 </svg>
