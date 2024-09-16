@@ -255,7 +255,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
               <Image className='lg:h-14 lg:w-14 h-10 w-10' src={hoverImage} alt={title} />
             </div>
 
-            <div ref={textContainerRef} className='absolute lg:bottom-10 bottom-2'>
+            <div ref={textContainerRef} className='absolute lg:bottom-10 bottom-2 top-[70px] sm:top-[auto]'>
               <div
 
                 className=" flex flex-col gap-3   px-4 text-white z-10"
