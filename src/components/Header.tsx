@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         <Image
         ref={kalpLogoRef}
         src={kalplogoBlack}
-        className='cursor-pointer grayscale-0  hover:grayscale transition-all duration-1500 ease-in-out'
+        className='cursor-pointer opacity-50  hover:opacity-100 transition-all duration-1500 ease-in-out'
         alt="kalp Logo"
         width={100}
       /></div>
