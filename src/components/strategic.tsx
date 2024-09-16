@@ -138,7 +138,7 @@ const StrategicInitiatives: React.FC = () => {
             </h2>
 
             {settings && (
-              <div className="slider-container">
+              <div className=" overflow-hidden">
                 <Slider ref={sliderRef} {...settings}>
                   {slides.map((slide, index) => {
                     const [part1, part2] = slide.description.split('.,');
