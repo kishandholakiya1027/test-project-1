@@ -76,11 +76,9 @@ const AboutUs: React.FC = () => {
                     <div>
                         <Image
                             id="image-aboutUs1"
-                            src={hoveredImage === hoverImages.aboutUs1 ? hoverImages.aboutUs1 : aboutUs1}
+                            src={hoverImages.aboutUs1}
                             alt="Overlay"
-                            onMouseOver={() => handleMouseOver('aboutUs1')}
-                            onMouseOut={() => handleMouseOut('aboutUs1')}
-                            className="lg:w-full object-cover lg:h-[100%]  h-[136px]"
+                            className="lg:w-full object-cover lg:h-[100%]  h-[136px] grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out"
                         />
                     </div>
                     <div className="lg:text-[14px] text-[12px]">
@@ -102,10 +100,9 @@ const AboutUs: React.FC = () => {
                     <div>
                         <Image
                             id="image-member1"
-                            src={hoveredImage === hoverImages.member1 ? hoverImages.member1 : member1}
+                            src={hoverImages.member1}
                             alt="Overlay"
-                            onMouseOver={() => handleMouseOver('member1')}
-                            onMouseOut={() => handleMouseOut('member1')}
+                            className="grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out"
                         />
                     </div>
                     <div className="mt-4">
@@ -121,10 +118,9 @@ const AboutUs: React.FC = () => {
                     <div>
                         <Image
                             id="image-member2"
-                            src={hoveredImage === hoverImages.member2 ? hoverImages.member2 : member2}
+                            src={hoverImages.member2}
                             alt="Overlay"
-                            onMouseOver={() => handleMouseOver('member2')}
-                            onMouseOut={() => handleMouseOut('member2')}
+                            className="grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out"
                         />
                     </div>
                     <div className="mt-4">
@@ -145,11 +141,11 @@ const AboutUs: React.FC = () => {
                 <div>
                     <Image
                         id="image-aboutUs2"
-                        src={hoveredImage === hoverImages.aboutUs2 ? hoverImages.aboutUs2 : aboutUs2}
+                        src={hoverImages.aboutUs2}
                         alt="Overlay"
                         onMouseOver={() => handleMouseOver('aboutUs2')}
                         onMouseOut={() => handleMouseOut('aboutUs2')}
-                        className="lg:w-full w-full object-cover lg:h-[100%] h-[136px]"
+                        className="lg:w-full w-full object-cover lg:h-[100%] h-[136px] grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out"
                     />
                 </div>
                 <div className="text-[14px] lg:text-xs custom-text">
@@ -187,11 +183,11 @@ const Governance = () => {
                 <div>
                     <Image
                         id="image-governance"
-                        src={hoveredImage === hoverImages.governance ? hoverImages.governance : governance}
+                        src={hoverImages.governance}
                         alt="Overlay"
                         onMouseOver={() => handleMouseOver('governance')}
                         onMouseOut={() => handleMouseOut('governance')}
-                        className="lg:w-full w-full object-cover lg:h-[100%] h-[136px]"
+                        className="lg:w-full w-full object-cover lg:h-[100%] h-[136px] grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out"
                     />
                 </div>
                 <div className="text-[12px] lg:text-[13px] custom-text">
