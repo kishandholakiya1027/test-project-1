@@ -50,7 +50,7 @@ const Blogs: React.FC = () => {
                              onMouseLeave={() => setHoveredIndex(null)} 
                              key={index} className="lg:col-span-1 col-span-3 md:mb-[40px]">
                                 <div className='h-[317px]'>
-                        <Image src={item?.image} alt="kalp Logo" className="w-full h-full" />
+                        <Image src={hoveredIndex === index ? item?.hoveredimage : item?.image} alt="kalp Logo" className="w-full h-full" />
                                 </div>
                   <div>
                     <p className="lg:text-[20px] text-md mt-4 font-semibold leading-[30px] h-[60px] line-clamp-2">

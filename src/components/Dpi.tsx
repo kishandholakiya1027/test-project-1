@@ -232,7 +232,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
    :  <>
    <div
       ref={image1Ref}
-      className="absolute top-0 left-0 !w-full h-full border border-black flex flex-col justify-center items-center"
+      className="absolute top-0 left-0 w-full h-full border border-black flex flex-col justify-center items-center"
       style={{ position: 'absolute', left: '0%', right: '0%' }}
     >
       <Image src={linesImage} alt={title} layout="fill" objectFit="cover" />
