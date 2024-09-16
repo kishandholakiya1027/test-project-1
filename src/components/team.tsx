@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import { useRef, useState } from 'react';
 import circledown from "../../public/images/expand_circle_down.svg";
-import circleUp from "../../public/images/circle-up.svg";
-import  Image  from 'next/image';
 
 const Team: React.FC = () => {
     const [visibleItems, setVisibleItems] = useState(4); // Initially show 4 items
@@ -100,7 +99,6 @@ const handleViewMore = () => {
         <Image 
           src={circledown} 
           alt="Toggle Image" 
-          // className='' 
           className={`transition-transform duration-300 ${expanded ? 'rotate-180' : 'rotate-0'}`}
           onClick={handleViewMore} 
         />
