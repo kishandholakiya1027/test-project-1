@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import giniImage from '../../public/images/Mask group.png'; // Place your image in the public directory
+import giniImage from '../../public/images/Mask group.svg'; // Place your image in the public directory
 import giniColoured from '../../public/images/giniColoured.jpg'; // Place your image in the public directory
 import giniToken from '../../public/images/giniToken.jpg'; // Place your image in the public directory
 import { useEffect, useState } from 'react';

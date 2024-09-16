@@ -97,7 +97,7 @@ const AboutUs: React.FC = () => {
     }
     const FoundingMembers = () => {
         return (
-            <div ref={containerRef} className="flex lg:flex-wrap lg:gap-20 lg:ml-[46px] lg:mt-0 mt-4 overflow-x-auto space-x-8 ">
+            <div ref={containerRef} className="flex lg:flex-wrap lg:gap-20 lg:ml-[46px] lg:mt-0 mt-4 overflow-x-auto space-x-8">
                 <div className="transition-transform duration-[1500ms] lg:max-w-[264px]">
                     <div>
                         <Image
@@ -111,7 +111,7 @@ const AboutUs: React.FC = () => {
                     <div className="mt-4">
                         <p className="lg:text-[20px] text-[15px]  font-semibold">Tapan Sangal</p>
                         <p className="lg:text-md text-sm" >Founder and Permanent Director</p>
-                        <p className="mt-6 lg:text-[14px] text-sm">
+                        <p className="mt-6 lg:text-[14px] text-sm hidden md:block">
                             Lorem ipsum dolor sit amet consectetur. Elementum risus lorem proin dignissim neque. Et euismod sem risus sollicitudin a placerat libero viverra. Ut pharetra sit in libero tortor tellus. Mi a diam fringilla mauris.
                         </p>
                     </div>
@@ -130,7 +130,7 @@ const AboutUs: React.FC = () => {
                     <div className="mt-4">
                         <p className="lg:text-[20px] text-[15px]  font-semibold">Shubham Raj</p>
                         <p className="lg:text-md text-sm" >Head - CTO</p>
-                        <p className="mt-6 lg:text-[14px] text-sm custom-text   ">
+                        <p className="mt-6 lg:text-[14px] text-sm custom-text hidden md:block   ">
                             Lorem ipsum dolor sit amet consectetur. Elementum risus lorem proin dignissim neque. Et euismod sem risus sollicitudin a placerat libero viverra. Ut pharetra sit in libero tortor tellus. Mi a diam fringilla mauris.
                         </p>
                     </div>

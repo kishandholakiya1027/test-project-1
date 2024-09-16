@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import circledown from "../../public/images/circle_down.png";
-import circleUp from "../../public/images/circle-up.png";
+import circledown from "../../public/images/circle_down.svg";
+import circleUp from "../../public/images/circle-up.svg";
 import  Image  from 'next/image';
 
 const Team: React.FC = () => {

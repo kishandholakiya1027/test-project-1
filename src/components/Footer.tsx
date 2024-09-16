@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Insta from "../../public/images/insta.png";
-import Facebook from "../../public/images/facebook.png";
-import Twitter from "../../public/images/twitter.png";
-import Linkdin from "../../public/images/linkdin.png";
+import Insta from "../../public/images/insta.svg";
+import Facebook from "../../public/images/facebook.svg";
+import Twitter from "../../public/images/twitter.svg";
+import Linkdin from "../../public/images/linkdin.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
