@@ -273,7 +273,7 @@ export default function Blogs() {
                     <Image
                       src={item?.image}
                       alt="kalp Logo"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover ease-in-out grayscale hover:grayscale-0 transition-all duration-1500"
                     />
                   </div>
                   <div>
