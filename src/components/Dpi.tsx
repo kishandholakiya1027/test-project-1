@@ -147,8 +147,8 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
 
     hoverTimeline
     .to(whitetextContainer, {
-      y: -30, 
-      opacity:0,// Scale down
+      y: -10, 
+      opacity:0.5,// Scale down
       duration:0.1,
       ease: 'power2.out',
       onStart: () => console.log('Animation started'),
@@ -177,14 +177,14 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
       )
       .fromTo(
         textContainer,
-        { y: 50, opacity: 0 },  
-        { y: 0, opacity: 8, duration: 0.2, ease: 'power.inOut' }, 
-        '-=0.3'
+        { y: 50, opacity: 0, transform: 'translateX(-50%)' },  
+        { y: 0, opacity: 8, duration: 0.2, transform: 'translateX(0)', ease: 'power.inOut' }, 
+        '-=0.5'
       )
       .to(
         whitetextContainer,
-        { y: 0, duration: 0.1, ease: 'power2.out' }, // Faster movement and adjusted scale
-        '-=0.1'
+        { y: 0, opacity:0.5, duration: 0.2, ease: 'power2.out' }, // Faster movement and adjusted scale
+        '-=0.5'
       );
 
     const onMouseEnter = () => {

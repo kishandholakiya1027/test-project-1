@@ -27,7 +27,6 @@ const StrategicInitiatives: React.FC = () => {
     slidesToScroll: 1,
     centerMode: true, // This keeps the center slide emphasized
     centerPadding: '150px',
-    afterChange: (current: number) => setActiveSlide(current),
     responsive: [
       {
         breakpoint: 1024,
@@ -49,7 +48,6 @@ const StrategicInitiatives: React.FC = () => {
     slidesToScroll: 1,
     centerMode: true, // This keeps the center slide emphasized
     centerPadding: '26px',
-    afterChange: (current: number) => setActiveSlide(current),
     responsive: [
       {
         breakpoint: 1024,
@@ -116,12 +114,14 @@ const StrategicInitiatives: React.FC = () => {
 
   ];
   const goToNext = () => {
+    setActiveSlide((prevSlide) => (prevSlide + 1) % slides.length);
     const nextSlide = (activeSlide + 1) % slides.length;
     sliderRef.current.slickGoTo(nextSlide);
   };
 
   // Custom handler for previous slide
   const goToPrev = () => {
+    setActiveSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
     const prevSlide = (activeSlide - 1 + slides.length) % slides.length;
     sliderRef.current.slickGoTo(prevSlide);
   };
@@ -146,8 +146,8 @@ const StrategicInitiatives: React.FC = () => {
                       <div key={index} className="lg:px-3 px-1">
                         <div
                           className={`flex justify-center items-center ${activeSlide === index
-                              ? 'text-black lg:h- h-[336px]'
-                              : 'border-2 mt-6 bg-black text-white'
+                            ? 'text-black lg:h- h-[336px]'
+                            : 'border-2 mt-6 bg-black text-white'
                             }`}
                         >
                           {activeSlide === index ? (
