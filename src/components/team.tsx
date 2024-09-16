@@ -98,9 +98,10 @@ const handleViewMore = () => {
         </div>
         <div className='flex flex-wrap items-center cursor-pointer justify-center md:mt-[48px] mt-[24px] gap-2'>
         <Image 
-          src={expanded ? circleUp : circledown} 
+          src={circledown} 
           alt="Toggle Image" 
-          className='' 
+          // className='' 
+          className={`transition-transform duration-300 ${expanded ? 'rotate-180' : 'rotate-0'}`}
           onClick={handleViewMore} 
         />
         <p className='text-xl font-semibold' onClick={handleViewMore}>

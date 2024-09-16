@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import blogMAin from "../../public/images/blog1.jpg";
 import blog1 from "../../public/images/blog2.jpg";
-import arrow from "../../public/images/rightArrow.svg";
+import arrow from "../../public/images/east.svg";
 import blog2 from "../../public/images/blog3.jpg";
 import blog3 from "../../public/images/blog4.jpg";
 import blogb1 from "../../public/images/b1.jpg";

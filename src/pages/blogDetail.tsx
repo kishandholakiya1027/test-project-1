@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import blogMAin from "../../public/images/blogDetail.jpg";
 import blogMAinMob from "../../public/images/blogDetailMob.jpg";
-import arrow from "../../public/images/rightArrow.svg";
+import arrow from "../../public/images/east-2.svg";
 import gartto1 from "../../public/images/gartto1.jpg";
 import gartto2 from "../../public/images/gartto2.jpg";
 import gartto3 from "../../public/images/gartto3.jpg";
