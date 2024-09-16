@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import circledown from "../../public/images/circle_down.svg";
+import circledown from "../../public/images/expand_circle_down.svg";
 import circleUp from "../../public/images/circle-up.svg";
 import  Image  from 'next/image';
 

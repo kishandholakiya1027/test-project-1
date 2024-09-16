@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import arrowDown from "../../public/images/arrow_down.svg";
-import arrowUp from "../../public/images/arrow_up.svg";
+import arrowUp from "../../public/images/arrow_forward_ios.svg";
 import Image from "next/image";
 
 const Faq: React.FC = () => {

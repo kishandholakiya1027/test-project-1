@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import slideImg from '../../public/images/lines background.png';
-import left from '../../public/images/chevron_right (1).svg';
-import right from '../../public/images/chevron_right.svg';
+import left from '../../public/images/chevron_right.svg';
+import right from '../../public/images/chevron_right (1).svg';
 import aboutMainImg from "../../public/images/aboutMain.jpg";
 
 // import right from '../../public/images/Frame 1410125009.jpg';
