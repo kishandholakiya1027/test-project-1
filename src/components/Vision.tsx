@@ -24,7 +24,7 @@ export default function Vision() {
           className="flex min-h-[417px] justify-between items-center w-full"
         >
           <div
-            className={`max-w-[48%] absolute duration-[1500ms] ${
+            className={`max-w-[48%] absolute duration-[1500ms] overflow-hidden ${
               transitioned ? "left-0" : "left-2/4 -translate-x-2/4"
             } `}
           >
