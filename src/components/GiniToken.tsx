@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import giniImage from '../../public/images/gini.png'; // Place your image in the public directory
+import giniImage from '../../public/images/Mask group.png'; // Place your image in the public directory
 import giniColoured from '../../public/images/giniColoured.jpg'; // Place your image in the public directory
 import giniToken from '../../public/images/giniToken.jpg'; // Place your image in the public directory
 import { useEffect, useState } from 'react';
@@ -13,9 +13,9 @@ export default function GiniToken() {
     return (
         <div className='lg:mt-[120px] mt-12'>
             <div className="lg:flex items-center justify-center w-full">
-                <div className="flex justify-center items-center lg:w-[40%] ">
+                <div className="flex justify-between items-center lg:w-[40%] ">
                    {/* Left Line */}
-<div className="relative h-[1px] w-1/2 hidden lg:block">
+<div className="relative h-[1px] w-[30%] hidden lg:block">
   <div className="absolute inset-0 bg-black"></div>
   <div className="absolute left-0 h-full w-full flex justify-start">
     {/* Gray blurred corner */}
@@ -35,15 +35,17 @@ export default function GiniToken() {
 </div>
 
 {/* Center Image */}
-<div className="bg-[#f4f4f4] relative lg:h-[65px] lg:w-[250px] h-[55px] w-[150px]">
-  <div className='absolute top-1 right-6'>
-    <Image src={giniImage} alt="Center Image" className='top-0 lg:h-[55px] lg:w-[185px] mx-3' />
+<div className='flex items-center justify-between w-[150px] h-[55px] bg-[#000]'>
+  <div className='text-center w-[50%] flex justify-center items-center'>
+  <Image src={giniImage} alt="Center Image" className='' />
   </div>
+  <div className='w-[50%] text-white text-[20px] border-l border-[#595959] border-solid text-center'>GINI</div>
 </div>
 
 {/* Right Line */}
-<div className="relative h-[1px] w-1/2 hidden lg:block">
-  <div className="absolute inset-0 bg-black"></div>
+<div className="relative h-[1px] w-[30%] hidden lg:block">
+  <div className="absolute inset-0 bg-black">
+  </div>
   <div className="absolute right-0 h-full w-full flex justify-end">
     {/* Gray blurred corner */}
     <div className="w-[40px] h-full" style={{

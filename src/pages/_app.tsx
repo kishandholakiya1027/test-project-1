@@ -3,6 +3,7 @@
 import '../styles/globals.css'; // Make sure you have your global styles
 import { Poppins } from 'next/font/google';
 import type { AppProps } from 'next/app';
+import 'animate.css';
 
 const poppins = Poppins({
   subsets: ['latin'],

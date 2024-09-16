@@ -38,12 +38,14 @@ const Header: React.FC<HeaderProps> = (props) => {
     <main className={`xl:max-w-[1280px] max-w-full mx-auto py-5 w-full px-4 2xl:px-0  flex flex-wrap items-center justify-between`}>
       <Image src={logo.src} alt="Main Logo" width={132} height={57} />
 
-      <div onMouseOver={handleMouseOver}
-    onMouseOut={handleMouseOut} onClick={()=> router.push('/blogs')} >
+      <div 
+    //   onMouseOver={handleMouseOver}
+    // onMouseOut={handleMouseOut}
+     onClick={()=> router.push('/blogs')} >
         <Image
         ref={kalpLogoRef}
-        src={src}
-        className='cursor-pointer'
+        src={kalplogoBlack}
+        className='cursor-pointer grayscale-0  hover:grayscale transition-all duration-1500 ease-in-out'
         alt="kalp Logo"
         width={100}
       /></div>

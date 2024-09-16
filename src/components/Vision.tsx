@@ -24,18 +24,18 @@ export default function Vision() {
           className="flex min-h-[417px] justify-between items-center w-full"
         >
           <div
-            className={`max-w-[48%] absolute duration-[1500ms] overflow-hidden ${
+            className={`max-w-[48%] absolute z-20 duration-[1500ms] overflow-hidden ${
               transitioned ? "left-0" : "left-2/4 -translate-x-2/4"
             } `}
           >
             <Image
               src={transitioned ? vision : visionOld}
               alt="New"
-              className={`${transitioned ? "" : "grayscale-0"} transition-all duration-1500 ease-in-out ml-4 lg:ml-0 grp w-full min-h-[417px] object-cover`}
+              className={`${transitioned ? "w-full" : "w-[418px] grayscale-0"} transition-all duration-1500 ease-in-out ml-4 lg:ml-0 grp  min-h-[417px] object-cover`}
             />
           </div>
           <div
-            className={`w-[48%] absolute duration-[1500ms] ${
+            className={`w-[48%] absolute z-10 duration-[1500ms] ${
               transitioned ? "left-2/4" : "left-2/4 -translate-x-2/4"
             } `}
           >
@@ -62,7 +62,7 @@ export default function Vision() {
             src={transitioned ? vision : visionOld}
             alt="New"
             className={`lg:absolute inset-0 z-10 w-full h-full object-cover transition-transform duration-[1500ms] ${
-              transitioned ? "translate-x-[-65%]" : "translate-x-0"
+              transitioned ? "translate-x-[-65%]" : "w-[418px] translate-x-0"
             }`}
           />
           <div
