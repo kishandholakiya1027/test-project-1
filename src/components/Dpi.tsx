@@ -17,6 +17,13 @@ import frame5W from '../../public/images/framW.svg';
 import frameW from '../../public/images/Group.svg';
 import linesImage from '../../public/images/lines.png';
 import frame from '../../public/images/Frame.svg';
+import fh1 from '../../public/images/fh1.svg';
+import fh2 from '../../public/images/fh2.svg';
+import fh3 from '../../public/images/fh3.svg';
+import fh4 from '../../public/images/fh4.svg';
+import fh5 from '../../public/images/fh5.svg';
+import fh6 from '../../public/images/fh6.svg';
+import fh7 from '../../public/images/fh7.svg';
 
 // Array holding all the data for the 8 boxes
 const boxData = [
@@ -30,49 +37,49 @@ const boxData = [
   {
     id: 1,
     normalImage: f1,
-    hoverImage: frameW,
+    hoverImage: fh1,
     title: "Decentralized Governance",
     description: "Empowering stakeholders through transparent, community-driven decision-making processes.."
   },
   {
     id: 2,
     normalImage: f2,
-    hoverImage: frame2W,
+    hoverImage: fh2,
     title: "Regulatory Compliance",
     description: "Pioneering a 'compliance-first' approach, embedding legal and ethical standards into our technological foundation.."
   },
   {
     id: 3,
     normalImage: f3,
-    hoverImage: frame3W,
+    hoverImage: fh3,
     title: "Interoperability",
     description: "Facilitating seamless integration across diverse blockchain networks and traditional systems.."
   },
   {
     id: 4,
     normalImage: f4,
-    hoverImage: frame4W,
+    hoverImage: fh4,
     title: "Security and Privacy",
     description: "Implementing state-of-the-art cryptographic protocols and privacy-preserving technologies.."
   },
   {
     id: 5,
     normalImage: f5,
-    hoverImage: frame5W,
+    hoverImage: fh5,
     title: "Scalability",
     description: "Developing infrastructure capable of supporting global-scale operations without compromising performance.."
   },
   {
     id: 6,
     normalImage: f6,
-    hoverImage: frame6W,
+    hoverImage: fh6,
     title: "Sustainability",
     description: "Promoting environmentally responsible practices in blockchain technology.."
   },
   {
     id: 7,
     normalImage: f7,
-    hoverImage: frame7W,
+    hoverImage: fh7,
     title: "Inclusivity",
     description: "Ensuring equitable access to digital infrastructure, regardless of socioeconomic status.."
   },
