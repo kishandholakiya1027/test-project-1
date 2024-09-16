@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import vision from '../../public/images/vision2.jpg';
-import visionOld from '../../public/images/oldVision.jpg';
+import { useEffect, useState } from "react";
+import vision from "../../public/images/vision2.jpg";
+import visionOld from "../../public/images/oldVision.jpg";
 import Image from "next/image";
 
 export default function Vision() {
@@ -18,60 +18,73 @@ export default function Vision() {
 
   return (
     <div className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden">
-     {
-     isDesktop ?      <div
-      className="lg:relative w-full lg:max-w-[540px] h-full lg:max-h-[400px] flex flex-col-reverse"
-      onMouseEnter={handleMouseEnter}
-    >
-      {/* Text behind the image */}
-      <div
-        className={`flex w-full lg:absolute inset-0 lg:hidden z-0 items-center justify-center transition-transform duration-[1500ms] ${transitioned ? 'translate-x-[0%]' : 'translate-x-0'}`}
-      >
-        <div className='flex flex-col justify-center'>
-          <p className='text-3xl font-bold'>Our Vision</p>
-          <p className='text-md mt-10'>
-  We envision a world where decentralized technology democratizes digital access, empowering everyone to participate in a fair, transparent global economy. With our compliance-first approach, we set the standard for responsible blockchain, enhancing trust, reducing inequality, and driving positive change.
-</p>
-
+      {isDesktop ? (
+        <div
+          onMouseEnter={handleMouseEnter}
+          className="flex min-h-[417px] justify-between items-center w-full"
+        >
+          <div
+            className={`max-w-[48%] absolute duration-[1500ms] ${
+              transitioned ? "left-0" : "left-2/4 -translate-x-2/4"
+            } `}
+          >
+            <Image
+              src={transitioned ? vision : visionOld}
+              alt="New"
+              className={`ml-4 lg:ml-0 grp w-full max-h-[417px] object-cover`}
+            />
+          </div>
+          <div
+            className={`w-[48%] absolute duration-[1500ms] ${
+              transitioned ? "left-2/4" : "left-2/4 -translate-x-2/4"
+            } `}
+          >
+            <div
+              className={`flex flex-col justify-center ${
+                transitioned ? "" : "hidden"
+              }`}
+            >
+              <p className="text-3xl font-bold">Our Vision</p>
+              <p className="text-md mt-10">
+                We envision a world where decentralized technology democratizes
+                digital access, empowering everyone to participate in a fair,
+                transparent global economy. With our compliance-first approach,
+                we set the standard for responsible blockchain, enhancing trust,
+                reducing inequality, and driving positive change.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="">
+          {/* Text behind the image */}
+          <Image
+            src={transitioned ? vision : visionOld}
+            alt="New"
+            className={`lg:absolute inset-0 z-10 w-full h-full object-cover transition-transform duration-[1500ms] ${
+              transitioned ? "translate-x-[-65%]" : "translate-x-0"
+            }`}
+          />
+          <div
+            className={`lg:absolute lg:inset-0 flex z-0 items-center justify-center transition-transform duration-[1500ms] ${
+              transitioned ? "translate-x-[56%]" : "translate-x-0"
+            }`}
+          >
+            <div className="flex flex-col justify-center mt-4 ">
+              <p className="lg:text-3xl text-md font-bold">Our Vision</p>
+              <p className="lg:text-md text-xs  lg:mt-10 mt-4">
+                We envision a world where decentralized technology democratizes
+                digital access, empowering everyone to participate in a fair,
+                transparent global economy. With our compliance-first approach,
+                we set the standard for responsible blockchain, enhancing trust,
+                reducing inequality, and driving positive change.
+              </p>
+            </div>
+          </div>
 
-      {/* Image in front of the text */}
-      <div className='h-[262px] mb-4 lg:mb-0'>
-        <Image
-          src={transitioned ? vision : visionOld}
-          alt="New"
-          className={`w-full h-full`}
-        />
-      </div>
-    </div> : 
-         <div
-         className=""
-      
-       >
-         {/* Text behind the image */}
-         <Image
-           src={transitioned ? vision : visionOld}
-           alt="New"
-           className={`lg:absolute inset-0 z-10 w-full h-full object-cover transition-transform duration-[1500ms] ${transitioned ? 'translate-x-[-65%]' : 'translate-x-0'}`}
-         />
-         <div
-           className={`lg:absolute lg:inset-0 flex z-0 items-center justify-center transition-transform duration-[1500ms] ${transitioned ? 'translate-x-[56%]' : 'translate-x-0'}`}
-         >
-
-           <div className='flex flex-col justify-center mt-4 '>
-             <p className='lg:text-3xl text-md font-bold'>Our Vision</p>
-             <p className='lg:text-md text-xs  lg:mt-10 mt-4'>
-             We envision a world where decentralized technology democratizes digital access, empowering everyone to participate in a fair, transparent global economy. With our compliance-first approach, we set the standard for responsible blockchain, enhancing trust, reducing inequality, and driving positive change.
-             </p>
-           </div>
-         </div>
- 
-         {/* Image in front of the text */}
-       
-       </div>
-     } 
-
+          {/* Image in front of the text */}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import arrowUp from "../../public/images/arrow_up.png";
 import Image from "next/image";
 
 const Faq: React.FC = () => {
-  const [openAccordionIndex, setOpenAccordionIndex] = useState(null);
+  const [openAccordionIndex, setOpenAccordionIndex] = useState(0);
   const handleToggle = (index: any) => {
     setOpenAccordionIndex(openAccordionIndex === index ? null : index);
   };
