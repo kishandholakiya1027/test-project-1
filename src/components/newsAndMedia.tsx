@@ -21,48 +21,39 @@ const NewsMedia = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Hover state
   const [prevClicked, setPrevClicked] = useState(false);
   const [nextClicked, setNextClicked] = useState(false);
-
-  const handlePrevClick = () => {
-    setPrevClicked(true);
-    setNextClicked(false);
-  };
-
-  const handleNextClick = () => {
-    setNextClicked(true);
-    setPrevClicked(false);
-  };
-  
-console.log(prevClicked)
-console.log(nextClicked)
   useEffect(() => {
     setIsDesktop(window.innerWidth > 768);
     setSetting(window.innerWidth > 768 ? settings : mobSettings);
   }, [settig]);
 
   const PrevArrow = ({ onClick }: any) => (
-    <div 
-      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-[44px]' : 'left-[100px] bottom-[-42px]'} z-10 cursor-pointer`}
-      onClick={() => { onClick(),  
-        setPrevClicked(true);
-        setNextClicked(false); }}
+    <div
+      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-[44px]' : 'left-[calc(50%-46px)] bottom-[-42px]'} z-10 cursor-pointer`}
+      onClick={() => {
+        if (onClick) onClick();
+          setPrevClicked(true);
+        setNextClicked(false);
+      }}
     >
       <Image src={prevClicked ? blackPrev : whitePrev} alt="Previous" width={38} height={38} />
     </div>
   );
 
   const NextArrow = ({ onClick }: any) => (
-    <div 
-      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-0' : 'bottom-[-42px] right-[160px]'} z-10 cursor-pointer`}
-      onClick={() => { onClick();  
-         setNextClicked(true);
-        setPrevClicked(false);}}
+    <div
+      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-0' : 'bottom-[-42px] right-[calc(50%-46px)]'} z-10 cursor-pointer`}
+      onClick={() => {
+        if (onClick) onClick();
+        setNextClicked(true);
+        setPrevClicked(false);
+      }}
 
     >
-    {nextClicked ?
-      <Image src={whiteNext }  alt="Next" width={38} height={38} />
-    :
-      <Image src={blackNext }  alt="Next" width={38} height={38} />
-     }
+      {nextClicked ?
+        <Image src={whiteNext} alt="Next" width={38} height={38} />
+        :
+        <Image src={blackNext} alt="Next" width={38} height={38} />
+      }
     </div>
   );
 
@@ -129,28 +120,25 @@ console.log(nextClicked)
       <div className="news_media">
         <Slider {...setting}>
           {data.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="news-media-post"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative">
-                <Image 
-                  src={item.hoverImgSrc} 
-                  alt={item.title} 
-                  className="w-full object-cover news-media-post-img" 
+                <Image
+                  src={item.hoverImgSrc}
+                  alt={item.title}
+                  className="w-full object-cover news-media-post-img"
                 />
-                
                 {/* Gradient Background Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-[43rem] bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                
                 {/* Text Content */}
                 <div className="absolute lg:bottom-4 bottom-0 left-4 pb-7 px-2 text-white">
                   <h3 className="lg:text-lg text-xs font-semibold">{item.title}</h3>
                   <p className="lg:text-sm text-xs mt-2">{item.description}</p>
                 </div>
-                
                 {/* Research Tag */}
                 <div className="absolute top-4 right-4">
                   <div className="text-white lg:text-sm text-xs lg:py-3 py-1 cursor-pointer lg:px-4 px-1.5 rounded-full bg-black bg-opacity-50">
