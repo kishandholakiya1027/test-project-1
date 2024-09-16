@@ -80,7 +80,7 @@ export default function GiniToken() {
              loading="lazy" 
                
 
-                className="transition-transform duration-4000 ease-in-out lg:max-w-[530px] max-h-[300px] "/>
+                className="transition-transform duration-4000 ease-in-out lg:max-w-[530px] min-h-[300px] "/>
                 </div>
             }
                 <div className="lg:flex lg:gap-[62px] gap-6 items-center lg:px-4 px-2 justify-between lg:mt-10 mt-4">

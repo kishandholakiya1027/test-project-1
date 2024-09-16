@@ -43,7 +43,7 @@ function Accordion() {
 
   return (
    <>
-    <div className={`text-white lg:mx-6 mx-3 overflow-x-auto lg:gap-8 gap-4 items-end flex`}>
+    <div className={`text-white lg:mx-6 mx-3 overflow-x-auto gap-4 items-end flex`}>
       {/* Key Components */}
       <div className="md:w-[100%] lg:w-[70%] w-full">
         <div
@@ -75,7 +75,7 @@ function Accordion() {
                 <p>Kalp Conjurer</p>
                 <p>Kalp Insight</p>
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 lg:text-md text-sm">
                 <p>Kalp Wallet</p>
                 <p>Kalp Explorer</p>
               </div>

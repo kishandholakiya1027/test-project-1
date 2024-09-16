@@ -236,10 +236,10 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
       style={{ position: 'absolute', left: '0%', right: '0%' }}
     >
       <Image src={linesImage} alt={title} layout="fill" objectFit="cover" />
-      <div className="absolute lg:left-6 left-2 top-5 z-10">
+      <div className="absolute lg:left-6 left-[10px] top-5 z-10">
         <Image className='lg:h-14 lg:w-14 h-10 w-10'  src={normalImage} alt={title} />
       </div>
-      <div ref={whitetextContainerRef} className="absolute lg:bottom-16 left-5 bottom-4  text-black z-10">
+      <div ref={whitetextContainerRef} className="absolute lg:bottom-16 left-[10px] bottom-4  text-black z-10">
         <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
       </div>
     </div>

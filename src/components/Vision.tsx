@@ -31,7 +31,7 @@ export default function Vision() {
             <Image
               src={transitioned ? vision : visionOld}
               alt="New"
-              className={`ml-4 lg:ml-0 grp w-full max-h-[417px] object-cover`}
+              className={`${transitioned ? "" : "grayscale-0"} transition-all duration-1500 ease-in-out ml-4 lg:ml-0 grp w-full min-h-[417px] object-cover`}
             />
           </div>
           <div

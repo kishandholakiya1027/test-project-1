@@ -131,15 +131,15 @@ console.log(nextClicked)
           {data.map((item, index) => (
             <div 
               key={index} 
-              className=""
+              className="news-media-post"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative">
                 <Image 
-                  src={hoveredIndex === index ? item.hoverImgSrc : item.imgSrc} 
+                  src={item.hoverImgSrc} 
                   alt={item.title} 
-                  className="w-full object-cover" 
+                  className="w-full object-cover news-media-post-img" 
                 />
                 
                 {/* Gradient Background Overlay */}

@@ -1,11 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import bannerImg from "../../public/assets/hero banner/black and white/hero banner_black and white.png";
 import bannerImg2 from "../../public/assets/hero banner/colored/hero banner_colored.png";
-import bannerImgMobile from "../../public/images/bannerBlackMobile.jpg";
 import bannerImg2Mobile from "../../public/images/bannerMobile.jpg";
-import edgeImg from "../../public/images/egde.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Vision from "@/components/Vision";
@@ -21,51 +17,22 @@ import StrategicInitiatives from "@/components/strategic";
 import Dpi from "@/components/Dpi";
 
 export default function Home() {
-  const [src, setSrc] = useState(bannerImg);
+  const [src, setSrc] = useState(bannerImg2);
   const imageRef = useRef(null);
 
   useEffect(() => {
     if (window.innerWidth < 768) {
-      setSrc(bannerImg);
+      setSrc(bannerImg2Mobile);
     } else {
-      setSrc(bannerImg);
+      setSrc(bannerImg2);
     }
   }, []);
 
   const handleMouseOver = () => {
-    if (window.innerWidth < 768) {
-      gsap.to(imageRef.current, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: () => setSrc(bannerImg2Mobile),
-      });
-      gsap.to(imageRef.current, { opacity: 1, delay: 0.2, duration: 0.2 });
-    } else {
-      gsap.to(imageRef.current, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: () => setSrc(bannerImg2),
-      });
-      gsap.to(imageRef.current, { opacity: 1, delay: 0.2, duration: 0.2 });
-    }
   };
 
   const handleMouseOut = () => {
-    if (window.innerWidth < 768) {
-      gsap.to(imageRef.current, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: () => setSrc(bannerImgMobile),
-      });
-      gsap.to(imageRef.current, { opacity: 1, delay: 0.2, duration: 0.2 });
-    } else {
-      gsap.to(imageRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        onComplete: () => setSrc(bannerImg),
-      });
-      gsap.to(imageRef.current, { opacity: 1, delay: 0.2, duration: 0.2 });
-    }
+ 
   };
 
   return (
@@ -74,7 +41,7 @@ export default function Home() {
         <Header />
         <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
           <div
-            className="relative"
+            className="relative grp"
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             onTouchStart={handleMouseOver}
@@ -83,11 +50,11 @@ export default function Home() {
             <Image
               src={src}
               alt="kalp Logo"
-              className="transition-opacity duration-500 ease-in-out sm:h-full h-[270px] object-cover object-center"
+              className="hero-img grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out sm:h-full w-full min-h-[270px] object-cover object-center"
               ref={imageRef}
             />
-            <div className="sm:max-h-[248px] max-h-[216px] max-w-[213px] sm:py-[40px] sm:px-[24px] p-[16px] sm:max-w-[485px] bg-[#00000099] absolute sm:bottom-4 sm:left-4 bottom-2 left-2">
-              <div className="text-[#fff] xl:text-[48px] lg:text-[40px] sm:text-[32px] text-[24px] xl:leading-[56px] lg:leading-[48px] sm:leading-[40px] leading-[28px]">
+            <div className="slider-caption sm:max-h-[248px] max-h-[216px] max-w-[213px] sm:py-[40px] sm:px-[24px] p-[16px] sm:max-w-[485px] bg-[#00000099] absolute sm:bottom-4 sm:left-4 bottom-2 left-2">
+              <div className="text-[#fff] xl:text-[48px] lg:text-[40px] font-semibold sm:text-[32px] text-[24px] xl:leading-[56px] lg:leading-[48px] sm:leading-[40px] leading-[28px]">
                 Empowering Global Digital Equity
               </div>
             </div>

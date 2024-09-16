@@ -4,11 +4,14 @@ import Facebook from "../../public/images/facebook.png";
 import Twitter from "../../public/images/twitter.png";
 import Linkdin from "../../public/images/linkdin.png";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = (props) => {
   const [isDesktop, setIsDesktop] = useState(false);
+  const router = useRouter();
+
   useEffect(() => {
     setIsDesktop(window.innerWidth > 768);
   }, []);
@@ -59,7 +62,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                   <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-4">
                     GINI: Digital Currency
                   </li>
-                  <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-6">
+                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-6" onClick={() => router.push("/blogs")}>
                     Blogs
                   </li>
                 </ul>

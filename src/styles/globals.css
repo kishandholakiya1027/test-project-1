@@ -5,6 +5,12 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+* {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 :root {
   --font-poppins: 'Poppins', sans-serif;
   --foreground-rgb: 0, 0, 0;
@@ -69,3 +75,13 @@ body {
   display: flex;
   gap: 22px;
 }
+
+.grp:hover .hero-img {
+  filter: grayscale(0%);
+}
+
+.news-media-post:hover .news-media-post-img {
+  filter: grayscale(100%);
+  transition: all 0.15s ease-in-out;
+}
+

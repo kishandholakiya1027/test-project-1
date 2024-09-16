@@ -19,6 +19,8 @@ const StrategicInitiatives: React.FC = () => {
     setSettings(window.innerWidth > 768 ? settings : mobSettings);
   }, [hoveredIndex]);
   const [activeSlide, setActiveSlide] = useState(0);
+  console.log("activeSlide", activeSlide);
+  
   const settings = {
     infinite: true,
     className: "center",
@@ -27,6 +29,7 @@ const StrategicInitiatives: React.FC = () => {
     slidesToScroll: 1,
     centerMode: true, // This keeps the center slide emphasized
     centerPadding: '150px',
+    afterChange: (current: number) => setActiveSlide(current),
     responsive: [
       {
         breakpoint: 1024,
@@ -48,6 +51,7 @@ const StrategicInitiatives: React.FC = () => {
     slidesToScroll: 1,
     centerMode: true, // This keeps the center slide emphasized
     centerPadding: '26px',
+    afterChange: (current: number) => setActiveSlide(current),
     responsive: [
       {
         breakpoint: 1024,
