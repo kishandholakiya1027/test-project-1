@@ -95,16 +95,16 @@ const Dpi: React.FC = () => {
 
       {/* 4x4 Grid */}
       <div className="grid grid-cols-4 gap-[5px] md:gap-[24px] pt-4 md:pt-[48px]">
-        {boxData.map((box,index) => (
+        {boxData.map((box, index) => (
           <div key={index} className='lg:col-span-1 col-span-2' >
-          <AnimatedImageBox
-            key={box.id}
-            id={box.id}
-            normalImage={box.normalImage}
-            hoverImage={box.hoverImage}
-            title={box.title}
-            description={box.description}
-          />
+            <AnimatedImageBox
+              key={box.id}
+              id={box.id}
+              normalImage={box.normalImage}
+              hoverImage={box.hoverImage}
+              title={box.title}
+              description={box.description}
+            />
           </div>
         ))}
       </div>
@@ -115,7 +115,7 @@ const Dpi: React.FC = () => {
 // Component for each individual box
 
 interface AnimatedImageBoxProps {
-  id: number; 
+  id: number;
   normalImage: any;
   hoverImage: any;
   title: string;
@@ -146,14 +146,14 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
     const hoverTimeline = gsap.timeline({ paused: true });
 
     hoverTimeline
-    .to(whitetextContainer, {
-      y: -10, 
-      opacity:0.5,// Scale down
-      duration:0.1,
-      ease: 'power2.out',
-      onStart: () => console.log('Animation started'),
-      onComplete: () => console.log('Animation completed')
-    })
+      .to(whitetextContainer, {
+        y: -60,
+        opacity: 0.5,// Scale down
+        duration: 1,
+        ease: 'power2.out',
+        onStart: () => console.log('Animation started'),
+        onComplete: () => console.log('Animation completed')
+      })
       .to(image1, {
         width: 0,
         duration: 1,
@@ -161,7 +161,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
         left: '50%',
         right: '50%',
         opacity: 0,
-      })
+      }, 0)
       .fromTo(
         image2,
         { width: 0, left: '50%', right: '50%', opacity: 0 },
@@ -177,13 +177,13 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
       )
       .fromTo(
         textContainer,
-        { y: 50, opacity: 0, transform: 'translateX(-50%)' },  
-        { y: 0, opacity: 8, duration: 0.2, transform: 'translateX(0)', ease: 'power.inOut' }, 
+        { y: 100, opacity: 0, transform: 'translateY(-50%)' },
+        { y: 0, opacity: 1, duration: 1.5, transform: 'translateY(0)', ease: 'power.inOut' },
         '-=0.5'
       )
       .to(
         whitetextContainer,
-        { y: 0, opacity:0.5, duration: 0.2, ease: 'power2.out' }, // Faster movement and adjusted scale
+        { y: 0, opacity: 0.5, duration: 0.2, ease: 'power2.out' }, // Faster movement and adjusted scale
         '-=0.5'
       );
 
@@ -225,45 +225,45 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
       >
         <div className="absolute top-4 lg:left-4 lg:right-4 left-2 text-black z-10 ">
           <p className="lg:text-3xl text-xl uppercase font-bold">{title}</p>
-        <p className="lg:text-2xl text-md mt-4 lg:mt-5">{description}</p>
+          <p className="lg:text-2xl text-md mt-4 lg:mt-5">{description}</p>
 
         </div>
       </div>
-   :  <>
-   <div
-      ref={image1Ref}
-      className="absolute top-0 left-0 w-full h-full border border-black flex flex-col justify-center items-center"
-      style={{ position: 'absolute', left: '0%', right: '0%' }}
-    >
-      <Image src={linesImage} alt={title} layout="fill" objectFit="cover" />
-      <div className="absolute lg:left-6 left-[10px] top-5 z-10">
-        <Image className='lg:h-14 lg:w-14 h-10 w-10'  src={normalImage} alt={title} />
-      </div>
-      <div ref={whitetextContainerRef} className="absolute lg:bottom-16 left-[10px] bottom-4  text-black z-10">
-        <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
-      </div>
-    </div>
+        : <>
+          <div
+            ref={image1Ref}
+            className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center"
+            style={{ position: 'absolute', left: '0%', right: '0%' }}
+          >
+            <Image src={linesImage} alt={title} layout="fill" />
+            <div className="absolute lg:left-6 left-2 top-5 z-10">
+              <Image className='lg:h-14 lg:w-14 h-10 w-10' src={normalImage} alt={title} />
+            </div>
+            <div ref={whitetextContainerRef} className="absolute lg:bottom-16 left-5 bottom-4  text-black z-10">
+              <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
+            </div>
+          </div>
 
-    <div
-      ref={image2Ref}
-      className="absolute bg-black top-0 left-0 w-full h-full opacity-0 flex flex-col justify-center items-center"
-      style={{ position: 'absolute', left: '50%', right: '50%' }}
-    >
-      <div className="absolute left-6 top-5 z-10">
-        <Image className='lg:h-14 lg:w-14 h-10 w-10'  src={hoverImage} alt={title} />
-      </div>
-     
-     <div ref={textContainerRef} className='absolute lg:bottom-10 bottom-2'>
-     <div
-        
-        className=" flex flex-col gap-3   px-4 text-white z-10"
-      >
-        <p className=" lg:text-[20px] text-sm  font-semibold">{title}</p>
-        <p className="lg:text-[16px] text-[12px]">{description}</p>
-      </div>
-      </div> 
-   </div></> }
-    
+          <div
+            ref={image2Ref}
+            className="absolute bg-black top-0 left-0 w-full h-full opacity-0 flex flex-col justify-center items-center"
+            style={{ position: 'absolute', left: '50%', right: '50%' }}
+          >
+            <div className="absolute left-6 top-5 z-10">
+              <Image className='lg:h-14 lg:w-14 h-10 w-10' src={hoverImage} alt={title} />
+            </div>
+
+            <div ref={textContainerRef} className='absolute lg:bottom-10 bottom-2'>
+              <div
+
+                className=" flex flex-col gap-3   px-4 text-white z-10"
+              >
+                <p className=" lg:text-[20px] text-sm  font-semibold">{title}</p>
+                <p className="lg:text-[16px] text-[12px]">{description}</p>
+              </div>
+            </div>
+          </div></>}
+
     </div>
   );
 };
