@@ -1,21 +1,22 @@
-import { useRef, useEffect } from 'react';
-import Image from 'next/image';
 import { gsap } from 'gsap';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import frame6W from '../../public/images/circularW.svg';
+import f1 from '../../public/images/f1.svg';
+import f2 from '../../public/images/f2.svg';
+import f3 from '../../public/images/f3.svg';
+import f4 from '../../public/images/f4.svg';
+import f5 from '../../public/images/f5.svg';
+import f6 from '../../public/images/f6.svg';
+import f7 from '../../public/images/f7.svg';
+import frame2W from '../../public/images/Frame (5).svg';
+import frame3W from '../../public/images/Frame (6).svg';
+import frame4W from '../../public/images/Frame (7).svg';
+import { default as f8, default as frame7W } from '../../public/images/Frame (8).svg';
+import frame5W from '../../public/images/framW.svg';
+import frameW from '../../public/images/Group.svg';
 import linesImage from '../../public/images/lines.png';
 import frame from '../../public/images/Frame.svg';
-import frameW from '../../public/images/Group.svg';
-import frame2 from '../../public/images/Frame (1).svg';
-import frame2W from '../../public/images/Frame (5).svg';
-import frame3 from '../../public/images/Frame (2).svg';
-import frame3W from '../../public/images/Frame (6).svg';
-import frame4 from '../../public/images/Frame (3).svg';
-import frame4W from '../../public/images/Frame (7).svg';
-import frame5 from '../../public/images/fram.svg';
-import frame5W from '../../public/images/framW.svg';
-import frame6 from '../../public/images/circularIcon.svg';
-import frame6W from '../../public/images/circularW.svg';
-import frame7 from '../../public/images/Frame (4).svg';
-import frame7W from '../../public/images/Frame (8).svg';
 
 // Array holding all the data for the 8 boxes
 const boxData = [
@@ -28,49 +29,49 @@ const boxData = [
   },
   {
     id: 1,
-    normalImage: frame,
+    normalImage: f1,
     hoverImage: frameW,
     title: "Decentralized Governance",
     description: "Empowering stakeholders through transparent, community-driven decision-making processes.."
   },
   {
     id: 2,
-    normalImage: frame2,
+    normalImage: f2,
     hoverImage: frame2W,
     title: "Regulatory Compliance",
     description: "Pioneering a 'compliance-first' approach, embedding legal and ethical standards into our technological foundation.."
   },
   {
     id: 3,
-    normalImage: frame3,
+    normalImage: f3,
     hoverImage: frame3W,
     title: "Interoperability",
     description: "Facilitating seamless integration across diverse blockchain networks and traditional systems.."
   },
   {
     id: 4,
-    normalImage: frame4,
+    normalImage: f4,
     hoverImage: frame4W,
     title: "Security and Privacy",
     description: "Implementing state-of-the-art cryptographic protocols and privacy-preserving technologies.."
   },
   {
     id: 5,
-    normalImage: frame5,
+    normalImage: f5,
     hoverImage: frame5W,
     title: "Scalability",
     description: "Developing infrastructure capable of supporting global-scale operations without compromising performance.."
   },
   {
     id: 6,
-    normalImage: frame6,
+    normalImage: f6,
     hoverImage: frame6W,
     title: "Sustainability",
     description: "Promoting environmentally responsible practices in blockchain technology.."
   },
   {
     id: 7,
-    normalImage: frame7,
+    normalImage: f7,
     hoverImage: frame7W,
     title: "Inclusivity",
     description: "Ensuring equitable access to digital infrastructure, regardless of socioeconomic status.."
