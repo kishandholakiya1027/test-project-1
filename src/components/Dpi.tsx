@@ -6,16 +6,16 @@ import frame from '../../public/images/Frame.svg';
 import frameW from '../../public/images/Group.svg';
 import frame2 from '../../public/images/Frame (1).svg';
 import frame2W from '../../public/images/Frame (5).svg';
-import frame3 from '../../public/images/Frame (2).png';
-import frame3W from '../../public/images/Frame (6).png';
+import frame3 from '../../public/images/Frame (2).svg';
+import frame3W from '../../public/images/Frame (6).svg';
 import frame4 from '../../public/images/Frame (3).svg';
-import frame4W from '../../public/images/Frame (7).png';
-import frame5 from '../../public/images/fram.png';
-import frame5W from '../../public/images/framW.png';
-import frame6 from '../../public/images/circularIcon.png';
-import frame6W from '../../public/images/circularW.png';
-import frame7 from '../../public/images/Frame (4).png';
-import frame7W from '../../public/images/Frame (8).png';
+import frame4W from '../../public/images/Frame (7).svg';
+import frame5 from '../../public/images/fram.svg';
+import frame5W from '../../public/images/framW.svg';
+import frame6 from '../../public/images/circularIcon.svg';
+import frame6W from '../../public/images/circularW.svg';
+import frame7 from '../../public/images/Frame (4).svg';
+import frame7W from '../../public/images/Frame (8).svg';
 
 // Array holding all the data for the 8 boxes
 const boxData = [
@@ -236,10 +236,10 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
             style={{ position: 'absolute', left: '0%', right: '0%' }}
           >
             <Image src={linesImage} alt={title} layout="fill" />
-            <div className="absolute lg:left-6 left-2 top-5 z-10">
+            <div className="absolute left-[10px] lg:left-[24px] top-5 z-10">
               <Image className='lg:h-14 lg:w-14 h-10 w-10' src={normalImage} alt={title} />
             </div>
-            <div ref={whitetextContainerRef} className="absolute lg:bottom-16 left-5 bottom-4  text-black z-10">
+            <div ref={whitetextContainerRef} className="absolute lg:bottom-16  left-[10px] lg:left-[24px] bottom-4  text-black z-10">
               <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
             </div>
           </div>

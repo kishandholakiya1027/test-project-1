@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import arrow from "../../public/images/rightArrow.png";
+import arrow from "../../public/images/rightArrow.svg";
 import Image from 'next/image';
 import blogb1 from "../../public/images/b1.jpg";
 import blogb2 from "../../public/images/b2.jpg";

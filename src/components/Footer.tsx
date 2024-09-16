@@ -15,6 +15,13 @@ const Footer: React.FC<FooterProps> = (props) => {
   useEffect(() => {
     setIsDesktop(window.innerWidth > 768);
   }, []);
+
+  const scrollToAboutKalpFoundation = () => {
+    const aboutElement = document.getElementById('about-kalp-foundation');
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <footer className="bg-[#000]">
       <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
@@ -47,7 +54,8 @@ const Footer: React.FC<FooterProps> = (props) => {
               </p>
               <div className="md:mt-6 mt-4 flex md:flex-col wrap md:gap-0 gap-12">
                 <ul className="md:block grid grid-cols-2 md:gap-0 gap-x-10">
-                  <li className="md:text-[14px] text-[12px] leading-[30px] font-normal md:order-none order-1">
+                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal md:order-none order-1" onClick={scrollToAboutKalpFoundation}
+                  >
                     About Kalp Foundation
                   </li>
                   <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-3">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import closeImage from "../../public/images/do_not_disturb_on.png";
-import openImage from "../../public/images/add_circle.png";
+import openImage from "../../public/images/add_circle.svg";
 import Image from "next/image";
 
 function Accordion() {

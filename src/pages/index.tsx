@@ -61,7 +61,7 @@ export default function Home() {
           </div>
           <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]">
             <div className="col-span-1">
-              <p className="lg:text-[32px] text-md font-bold">
+              <p className="lg:text-[32px] text-md font-bold" id="about-kalp-foundation">
                 About KALP Foundation
               </p>
               <p className="lg:text-2xl text-sm lg:mt-4 mt-2 max-w-[384px]">

@@ -3,7 +3,7 @@ import ecoImg from "../../public/images/eco.jpg";
 import cecoImg from "../../public/images/ceco.jpg";
 import ecoImage from "../../public/images/ecoMobile.jpg";
 import dynamic from "next/dynamic";
-import arrow from "../../public/images/whiteArrow.png";
+import arrow from "../../public/images/whiteArrow.svg";
 import { useEffect, useState } from "react";
 import Accordion from "./Accordion";
 
@@ -64,13 +64,13 @@ const EcoSystem: React.FC = () => {
                             </div>
 
                         </div> : null} */}
-            <div className="flex items-center h-full lg:h-auto justify-center cursor-pointer lg:mt-4 group relative">
+            <div className="flex items-center h-full lg:h-auto justify-center cursor-pointer lg:mt-6 group relative">
               <Image
                 src={arrow}
                 alt="Arrow Icon"
-                className="h-4 w-5 lg:mt-4  opacity-0 transform  transition-all duration-300 group-hover:opacity-100 "
+                className="h-4 w-5 !mt-0 lg:mt-4  opacity-0 transform  transition-all duration-300 group-hover:opacity-100 "
               />
-              <p className="lg:text-2xl text-xl underline decoration-1 text-white font-semibold lg:mt-4 ml-4 relative z-10 transition-all duration-300 group-hover:ml-3">
+              <p className="lg:text-2xl text-xl underline decoration-1 text-white cursor-pointer font-semibold transition-transform duration-300 -translate-x-6 group-hover:translate-x-2">
                 More About KALP
               </p>
             </div>

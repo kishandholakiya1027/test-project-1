@@ -222,7 +222,7 @@ const Governance = () => {
 };
 
     return (
-        <div className="relative w-full mt-12 lg:mt-0">
+        <div className="relative w-full mt-12 lg:mt-0" id="about-us">
             {/* Background Image */}
             <Image
                 src={aboutMainImg}
