@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import frame6W from '../../public/images/circularW.svg';
 import f1 from '../../public/images/f1.svg';
 import f2 from '../../public/images/f2.svg';
 import f3 from '../../public/images/f3.svg';
@@ -9,14 +8,6 @@ import f4 from '../../public/images/f4.svg';
 import f5 from '../../public/images/f5.svg';
 import f6 from '../../public/images/f6.svg';
 import f7 from '../../public/images/f7.svg';
-import frame2W from '../../public/images/Frame (5).svg';
-import frame3W from '../../public/images/Frame (6).svg';
-import frame4W from '../../public/images/Frame (7).svg';
-import { default as f8, default as frame7W } from '../../public/images/Frame (8).svg';
-import frame5W from '../../public/images/framW.svg';
-import frameW from '../../public/images/Group.svg';
-import linesImage from '../../public/images/lines.png';
-import frame from '../../public/images/Frame.svg';
 import fh1 from '../../public/images/fh1.svg';
 import fh2 from '../../public/images/fh2.svg';
 import fh3 from '../../public/images/fh3.svg';
@@ -24,6 +15,9 @@ import fh4 from '../../public/images/fh4.svg';
 import fh5 from '../../public/images/fh5.svg';
 import fh6 from '../../public/images/fh6.svg';
 import fh7 from '../../public/images/fh7.svg';
+import frame from '../../public/images/Frame.svg';
+import frameW from '../../public/images/Group.svg';
+import linesImage from '../../public/images/lines.png';
 
 // Array holding all the data for the 8 boxes
 const boxData = [
