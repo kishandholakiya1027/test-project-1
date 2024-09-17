@@ -39,6 +39,7 @@ const Blogs: React.FC = () => {
   ];
 
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClass2, setAnimationClass2] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -47,8 +48,10 @@ const Blogs: React.FC = () => {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClass2("animate__animated animate__fadeInUp");
     } else {
       setAnimationClass("");
+      setAnimationClass2("");
     }
   }, [inView]);
   return (
@@ -76,7 +79,7 @@ const Blogs: React.FC = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               key={index}
-              className="lg:col-span-1 col-span-3 md:mb-[40px]"
+              className={`lg:col-span-1 col-span-3 md:mb-[40px] ${animationClass2}`}
             >
               <div className="h-[317px]">
                 <Image

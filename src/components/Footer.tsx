@@ -80,7 +80,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                 Follow us on
               </p>
               <div className="md:mt-6 mt-4">
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center">
+                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
                   <Image
                     src={Facebook}
                     alt={""}
@@ -90,7 +90,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                     Facebook
                   </p>
                 </div>
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center">
+                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
                   <Image
                     src={Linkdin}
                     alt={""}
@@ -100,7 +100,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                     LinkedIn
                   </p>
                 </div>
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center">
+                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
                   <Image
                     src={Twitter}
                     alt={""}
@@ -110,7 +110,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                     Twitter
                   </p>
                 </div>
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center">
+                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
                   <Image
                     src={Insta}
                     alt={""}

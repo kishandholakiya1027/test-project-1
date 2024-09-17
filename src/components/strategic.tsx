@@ -7,13 +7,11 @@ import right from "../../public/images/chevron_right (1).svg";
 import left from "../../public/images/chevron_right.svg";
 import slideImg from "../../public/images/lines background.png";
 
-// import right from '../../public/images/Frame 1410125009.jpg';
-
 const StrategicInitiatives: React.FC = () => {
   const sliderRef = useRef<any>(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Hover state
-  const [setting, setSettings] = useState<any>(); // To track the current center slide
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [setting, setSettings] = useState<any>();
 
   useEffect(() => {
     setIsDesktop(window.innerWidth > 768);
@@ -26,9 +24,9 @@ const StrategicInitiatives: React.FC = () => {
     infinite: true,
     className: "center",
     speed: 500,
-    slidesToShow: 3, // Show 3 items, so that centerMode works
+    slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: true, // This keeps the center slide emphasized
+    centerMode: true,
     draggable: false,
     centerPadding: "150px",
     afterChange: (current: number) => setActiveSlide(current),
@@ -49,9 +47,9 @@ const StrategicInitiatives: React.FC = () => {
     infinite: true,
     className: "center",
     speed: 500,
-    slidesToShow: 1, // Show 3 items, so that centerMode works
+    slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true, // This keeps the center slide emphasized
+    centerMode: true,
     centerPadding: "26px",
     draggable: false,
     afterChange: (current: number) => setActiveSlide(current),
@@ -68,7 +66,6 @@ const StrategicInitiatives: React.FC = () => {
       },
     ],
   };
-  // To track the current center slide
 
   const slides = [
     {
@@ -132,7 +129,6 @@ const StrategicInitiatives: React.FC = () => {
     sliderRef.current.slickGoTo(nextSlide);
   };
 
-  // Custom handler for previous slide
   const goToPrev = () => {
     setActiveSlide(
       (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
@@ -142,6 +138,7 @@ const StrategicInitiatives: React.FC = () => {
   };
 
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClassRight, setAnimationClassRight] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -150,8 +147,10 @@ const StrategicInitiatives: React.FC = () => {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__zoomIn");
+      setAnimationClassRight("animate__animated animate__fadeInRight");
     } else {
       setAnimationClass("");
+      setAnimationClassRight("");
     }
   }, [inView]);
 
@@ -173,7 +172,7 @@ const StrategicInitiatives: React.FC = () => {
             </h2>
 
             {settings && (
-              <div className=" overflow-hidden">
+              <div className={` overflow-hidden ${animationClassRight}`}>
                 <Slider ref={sliderRef} {...settings}>
                   {slides.map((slide, index) => {
                     const [part1, part2] = slide.description.split(".,");
@@ -245,8 +244,6 @@ const StrategicInitiatives: React.FC = () => {
         </div>
       ) : (
         <div className="bg-black lg:mt-28 mt-12">
-          {/* <Image src={slide.backgroundImage} alt={''} /> */}
-
           <div className=" text-white py-10">
             <h2 className="text-center lg:text-3xl text-lg font-bold lg:mb-20 mb-6 lg:mt-8 mt-2 ">
               Strategic Initiatives
@@ -259,12 +256,11 @@ const StrategicInitiatives: React.FC = () => {
                 return (
                   <div key={index} className="lg:px-3 px-1  ">
                     <div
-                      className={`flex justify-center items-center border-2 
-${
-  activeSlide === index
-    ? "px-4 bg-white text-black  lg:w-[301px] lg:h-[24rem] h-[336px]"
-    : "lg:mt-12 mt-6 bg-black text-white"
-}`} // Dynamically highlight the center slide
+                      className={`flex justify-center items-center border-2 ${
+                        activeSlide === index
+                          ? "px-4 bg-white text-black  lg:w-[301px] lg:h-[24rem] h-[336px]"
+                          : "lg:mt-12 mt-6 bg-black text-white"
+                      }`}
                     >
                       {activeSlide === index ? (
                         <div

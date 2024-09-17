@@ -133,6 +133,7 @@ const NewsMedia = () => {
   ];
 
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClass2, setAnimationClass2] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -141,8 +142,9 @@ const NewsMedia = () => {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClass2("animate__animated animate__fadeInLeft");
     } else {
-      setAnimationClass("");
+      setAnimationClass2("");
     }
   }, [inView]);
 
@@ -153,7 +155,7 @@ const NewsMedia = () => {
       >
         News & Media
       </h2>
-      <div className="news_media">
+      <div className={`news_media ${animationClass2}`}>
         <Slider {...setting}>
           {data.map((item, index) => (
             <div

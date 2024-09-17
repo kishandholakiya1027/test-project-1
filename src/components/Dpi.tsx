@@ -89,6 +89,7 @@ const boxData = [
 
 const Dpi: React.FC = () => {
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClassUp, setAnimationClassUp] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -97,12 +98,14 @@ const Dpi: React.FC = () => {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClassUp("animate__animated animate__fadeInUp");
     } else {
       setAnimationClass("");
+      setAnimationClassUp("");
     }
   }, [inView]);
   return (
-    <div className="lg:mt-[120px] mt-12 w-full" ref={ref}>
+    <div className="lg:mt-[120px] mt-12 w-full overflow-hidden" ref={ref}>
       <div
         className={`lg:flex flex-col gap-[10px] justify-center lg:px-12 text-center ${animationClass}`}
       >
@@ -119,7 +122,7 @@ const Dpi: React.FC = () => {
       </div>
 
       {/* 4x4 Grid */}
-      <div className="grid grid-cols-4 gap-[5px] md:gap-[24px] pt-4 md:pt-[48px]">
+      <div className={`grid grid-cols-4 gap-[5px] md:gap-[24px] pt-4 md:pt-[48px] ${animationClassUp}`}>
         {boxData.map((box, index) => (
           <div key={index} className="lg:col-span-1 col-span-2">
             <AnimatedImageBox

@@ -80,6 +80,7 @@ const Team: React.FC = () => {
   };
 
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClassZoom, setAnimationClassZoom] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -88,8 +89,10 @@ const Team: React.FC = () => {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClassZoom("animate__animated animate__fadeInUp");
     } else {
       setAnimationClass("");
+      setAnimationClassZoom("");
     }
   }, [inView]);
 
@@ -108,11 +111,11 @@ const Team: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-6 md:mt-[40px] mt-[24px]">
+      <div className={`grid grid-cols-4 gap-6 md:mt-[40px] mt-[24px] overflow-hidden`}>
         {data.slice(0, visibleItems).map((item: any, index: number) => (
           <div
             key={index}
-            className="lg:col-span-1 col-span-2 flex flex-col gap-2"
+            className={`lg:col-span-1 col-span-2 flex flex-col gap-2 ${animationClassZoom}`}
           >
             <div className="bg-[#D9D9D9] lg:h-[297px] h-[166px] w-full"></div>
             <div>
