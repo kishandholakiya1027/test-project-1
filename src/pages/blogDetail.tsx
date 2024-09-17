@@ -66,6 +66,7 @@ export default function Blogs() {
 
   const [animationClass, setAnimationClass] = useState("");
   const [animationClass2, setAnimationClass2] = useState("");
+  const [animationClass3, setAnimationClass3] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -75,9 +76,11 @@ export default function Blogs() {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
       setAnimationClass2("animate__animated animate__fadeInUp");
+      setAnimationClass3("animate__animated animate__flipInX");
     } else {
       setAnimationClass("");
       setAnimationClass2("");
+      setAnimationClass3("");
     }
   }, [inView]);
 
@@ -101,10 +104,10 @@ export default function Blogs() {
                       alt="kalp Logo"
                       className="w-full mx-auto md:mx-0"
                     />
-                    <p className="md:text-sm text-xs text-[#45525F] mt-2 md:mt-8 font-semibold">
+                    <p className={`md:text-sm text-xs text-[#45525F] mt-2 md:mt-8 font-semibold ${animationClass3}`}>
                       Sunday , 1 Jan 2023
                     </p>
-                    <p className="mt-2 md:mt-8 md:text-[15px] text-[12px]">
+                    <p className={`${animationClass3} mt-2 md:mt-8 md:text-[15px] text-[12px]`}>
                       A grid system is a design tool used to arrange content on
                       a webpage. It is a series of vertical and horizontal lines
                       that create a matrix of intersecting points, which can be
@@ -113,7 +116,7 @@ export default function Blogs() {
                       website, and can help to make the layout more visually
                       appealing and easier to navigate.
                     </p>
-                    <p className="mt-4 md:text-[15px] text-[12px]">
+                    <p className={`mt-4 md:text-[15px] text-[12px] ${animationClass3}`}>
                       If you’ve been to New York City and have walked the
                       streets, it is easy to figure out how to get from one
                       place to another because of the grid system that the city
