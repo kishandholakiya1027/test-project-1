@@ -28,6 +28,7 @@ const StrategicInitiatives: React.FC = () => {
     slidesToShow: 3, // Show 3 items, so that centerMode works
     slidesToScroll: 1,
     centerMode: true, // This keeps the center slide emphasized
+    draggable: false,
     centerPadding: '150px',
     afterChange: (current: number) => setActiveSlide(current),
     responsive: [
@@ -51,6 +52,7 @@ const StrategicInitiatives: React.FC = () => {
     slidesToScroll: 1,
     centerMode: true, // This keeps the center slide emphasized
     centerPadding: '26px',
+    draggable: false,
     afterChange: (current: number) => setActiveSlide(current),
     responsive: [
       {
