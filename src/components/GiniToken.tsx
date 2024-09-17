@@ -119,16 +119,16 @@ export default function GiniToken() {
       {!isDesktop && (
         <div
           className="max-w-[530px] lg:hidden mt-4 mx-auto"
-          onMouseOver={() => setSrc(giniColoured)}
-          onMouseOut={() => setSrc(giniToken)}
-          onTouchStart={() => setSrc(giniColoured)}
-          onTouchEnd={() => setSrc(giniToken)}
+          // onMouseOver={() => setSrc(giniColoured)}
+          // onMouseOut={() => setSrc(giniToken)}
+          // onTouchStart={() => setSrc(giniColoured)}
+          // onTouchEnd={() => setSrc(giniToken)}
         >
           <Image
-            src={src}
+            src={giniColoured}
             alt="Center Image"
             loading="lazy"
-            className="transition-transform duration-4000 ease-in-out lg:max-w-[530px] "
+            className="transition-transform duration-4000 ease-in-out lg:max-w-[530px] grayscale hover:grayscale-0"
           />
         </div>
       )}
