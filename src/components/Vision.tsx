@@ -74,9 +74,9 @@ export default function Vision() {
         <div className="">
           {/* Text behind the image */}
           <Image
-            src={transitioned ? vision : visionOld}
+            src={vision}
             alt="New"
-            className={`lg:absolute inset-0 z-10 w-full h-full object-cover transition-transform duration-[1500ms] ${
+            className={`lg:absolute inset-0 z-10 w-full h-full object-cover grayscale hover:grayscale-0 transition-transform duration-[1500ms] ${
               transitioned ? "translate-x-[-65%]" : "w-[418px] translate-x-0"
             }`}
           />
