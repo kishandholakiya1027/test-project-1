@@ -4,9 +4,6 @@ import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import media1 from "../../public/assets/news and media/black and white/1.png";
-import media2 from "../../public/assets/news and media/black and white/2.png";
-import media3 from "../../public/assets/news and media/black and white/3.png";
 import cmedia1 from "../../public/assets/news and media/colored/1.png";
 import cmedia2 from "../../public/assets/news and media/colored/2.png";
 import cmedia3 from "../../public/assets/news and media/colored/3.png";
@@ -19,7 +16,6 @@ const NewsMedia = () => {
   const [setting, setSetting] = useState<any>(null);
   const [settig, setSettig] = useState<any>(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Hover state
   const [prevClicked, setPrevClicked] = useState(false);
   const [nextClicked, setNextClicked] = useState(false);
   useEffect(() => {
@@ -112,7 +108,6 @@ const NewsMedia = () => {
         "KALP Foundation: Pioneering a Decentralized Digital Public Infrastructure",
       description:
         "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
-      imgSrc: media1,
       hoverImgSrc: cmedia1,
     },
     {
@@ -120,14 +115,12 @@ const NewsMedia = () => {
         "Chain Reactions: Navigating India’s Progress with Blockchain Technology",
       description:
         "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
-      imgSrc: media2,
       hoverImgSrc: cmedia2,
     },
     {
       title: "Embracing the Blockchain and the AI Tiger",
       description:
         "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
-      imgSrc: media3,
       hoverImgSrc: cmedia3,
     },
   ];
@@ -161,8 +154,8 @@ const NewsMedia = () => {
             <div
               key={index}
               className="news-media-post"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              // onMouseEnter={() => setHoveredIndex(index)}
+              // onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative">
                 <Image
