@@ -65,6 +65,7 @@ export default function Blogs() {
   ];
 
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClass2, setAnimationClass2] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -73,8 +74,10 @@ export default function Blogs() {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClass2("animate__animated animate__fadeInUp");
     } else {
       setAnimationClass("");
+      setAnimationClass2("");
     }
   }, [inView]);
 
@@ -255,7 +258,7 @@ export default function Blogs() {
                   {data?.map((item: any, index: number) => (
                     <div
                       key={index}
-                      className="md:col-span-1 col-span-3 mb-[35px] md:mb-8"
+                      className={`md:col-span-1 col-span-3 mb-[35px] md:mb-8 ${animationClass2}`}
                     >
                       <div className="h-[317px]">
                         <Image

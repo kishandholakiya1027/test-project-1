@@ -16,6 +16,7 @@ import blogMainMob2 from "../../public/images/blogMobile2.jpg";
 import blogMainMob3 from "../../public/images/blogMobile3.jpg";
 import blogMainMob4 from "../../public/images/blogMobile4.jpg";
 import { default as arrow, default as arrowLeft, default as arrowRight } from "../../public/images/east-2.svg";
+import { useInView } from "react-intersection-observer";
 
 export default function Blogs() {
   const router = useRouter();
@@ -103,6 +104,23 @@ export default function Blogs() {
         "Abstract the origin of Bitcoin was expected to introduce a new currency in the market - popularly...",
     },
   ];
+
+  const [animationClass, setAnimationClass] = useState("");
+  const [animationClass2, setAnimationClass2] = useState("");
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClass2("animate__animated animate__fadeInUp");
+    } else {
+      setAnimationClass("");
+      setAnimationClass2("");
+    }
+  }, [inView]);
   return (
     <>
       <div>
@@ -272,13 +290,13 @@ export default function Blogs() {
               </div>
             </div>
           </div>
-          <div className="md:mt-[30px] mt-[48px]">
-            <p className="md:text-[24px] md:leading-8 leading-6 text-[16px] md:font-semibold font-bold">
+          <div className="md:mt-[30px] mt-[48px] overflow-hidden" ref={ref}>
+            <p className={`md:text-[24px] md:leading-8 leading-6 text-[16px] md:font-semibold font-bold ${animationClass}`}>
               All blog posts
             </p>
             <div className="grid grid-cols-3 md:gap-[50px] gap-8 md:mt-8 mt-6">
               {data?.map((item: any, index: number) => (
-                <div key={index} className="md:col-span-1 col-span-3">
+                <div key={index} className={`md:col-span-1 col-span-3 ${animationClass2}`}>
                   <div className="h-[317px]">
                     <Image
                       src={item?.image}

@@ -60,6 +60,7 @@ const Faq: React.FC = () => {
   ];
 
   const [animationClass, setAnimationClass] = useState("");
+  const [animationClass2, setAnimationClass2] = useState("");
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -68,8 +69,10 @@ const Faq: React.FC = () => {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClass2("animate__animated animate__flipInX");
     } else {
       setAnimationClass("");
+      setAnimationClass2("");
     }
   }, [inView]);
 
@@ -95,7 +98,7 @@ const Faq: React.FC = () => {
               onClick={() => handleToggle(index)}
               className="w-full text-left py-4 flex justify-between items-center"
             >
-              <span className="md:text-[16px] text-[14px] font-semibold md:leading-6 leading-[21px] pr-3 w-[calc(100%-25px)]">
+              <span className={`md:text-[16px] text-[14px] font-semibold md:leading-6 leading-[21px] pr-3 w-[calc(100%-25px)] ${animationClass2}`}>
                 {item.title}
               </span>
               <div className="h-5 w-8 flex justify-end text-end">
@@ -107,7 +110,7 @@ const Faq: React.FC = () => {
               </div>
             </button>
             {openAccordionIndex === index && (
-              <div className="pb-4 text-[14px] font-normal leading-[21px]">
+              <div className={`pb-4 text-[14px] font-normal leading-[21px] ${animationClass2}`}>
                 {item.content}
               </div>
             )}

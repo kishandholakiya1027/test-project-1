@@ -55,7 +55,7 @@ const Blogs: React.FC = () => {
     }
   }, [inView]);
   return (
-    <div className="lg:mt-[120px] mt-24" ref={ref}>
+    <div className="lg:mt-[120px] mt-24 overflow-hidden" ref={ref}>
       <div className="flex flex-col justify-center items-center">
         <h1
           className={`lg:text-[32px] text-md font-bold md:mb-4 mb-2 ${animationClass}`}
