@@ -1,23 +1,28 @@
-import { useEffect, useRef, useState } from "react";
+import AboutUs from "@/components/AboutUs";
+import Blogs from "@/components/Blogs";
+import Dpi from "@/components/Dpi";
+import EcoSystem from "@/components/EcoSystem";
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
+import GiniToken from "@/components/GiniToken";
+import Header from "@/components/Header";
+import GetInvolvedSection from "@/components/InvolvedSection";
+import NewsMedia from "@/components/newsAndMedia";
+import StrategicInitiatives from "@/components/strategic";
+import Team from "@/components/team";
+import Vision from "@/components/Vision";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import bannerImg2 from "../../public/assets/hero banner/colored/hero banner_colored.png";
 import bannerImg2Mobile from "../../public/images/bannerMobile.jpg";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Vision from "@/components/Vision";
-import AboutUs from "@/components/AboutUs";
-import GiniToken from "@/components/GiniToken";
-import Team from "@/components/team";
-import NewsMedia from "@/components/newsAndMedia";
-import Blogs from "@/components/Blogs";
-import GetInvolvedSection from "@/components/InvolvedSection";
-import Faq from "@/components/Faq";
-import EcoSystem from "@/components/EcoSystem";
-import StrategicInitiatives from "@/components/strategic";
-import Dpi from "@/components/Dpi";
 
 export default function Home() {
   const [src, setSrc] = useState(bannerImg2);
+  const [animationClass, setAnimationClass] = useState("");
+  const [animationClassLeft, setAnimationClassLeft] = useState("");
+  const [animationClassRight, setAnimationClassRight] = useState("");
+
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -28,12 +33,25 @@ export default function Home() {
     }
   }, []);
 
-  const handleMouseOver = () => {
-  };
+  const handleMouseOver = () => {};
 
-  const handleMouseOut = () => {
- 
-  };
+  const handleMouseOut = () => {};
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationClass("animate__animated animate__slideInDown");
+      setAnimationClassLeft("animate__animated animate__slideInLeft");
+      setAnimationClassRight("animate__animated animate__slideInRight");
+    } else {
+      setAnimationClass("");
+      setAnimationClassLeft("");
+      setAnimationClassRight("");
+    }
+  }, [inView]);
 
   return (
     <>
@@ -46,6 +64,7 @@ export default function Home() {
             onMouseOut={handleMouseOut}
             onTouchStart={handleMouseOver}
             onTouchEnd={handleMouseOut}
+            ref={ref}
           >
             <Image
               src={src}
@@ -53,22 +72,29 @@ export default function Home() {
               className="hero-img grayscale hover:grayscale-0 transition-all duration-1500 ease-in-out sm:h-full w-full min-h-[270px] object-cover object-center"
               ref={imageRef}
             />
-            <div className="slider-caption sm:max-h-[248px] max-h-[216px] max-w-[213px] sm:py-[40px] sm:px-[24px] p-[16px] sm:max-w-[485px] bg-[#00000099] absolute sm:bottom-4 sm:left-4 bottom-2 left-2">
+            <div
+              className={`animate__animated ${animationClass} slider-caption sm:max-h-[248px] max-h-[216px] max-w-[213px] sm:py-[40px] sm:px-[24px] p-[16px] sm:max-w-[485px] bg-[#00000099] absolute sm:bottom-4 sm:left-4 bottom-2 left-2`}
+            >
               <div className="text-[#fff] xl:text-[48px] lg:text-[40px] font-semibold sm:text-[32px] text-[24px] xl:leading-[56px] lg:leading-[48px] sm:leading-[40px] leading-[28px]">
                 Empowering Global Digital Equity
               </div>
             </div>
           </div>
-          <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]">
-            <div className="col-span-1">
-              <p className="lg:text-[32px] text-md font-bold" id="about-kalp-foundation">
+          <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]" ref={ref}>
+            <div className={`col-span-1 ${animationClassLeft}`}>
+              <p
+                className="lg:text-[32px] text-md font-bold"
+                id="about-kalp-foundation"
+              >
                 About KALP Foundation
               </p>
               <p className="lg:text-2xl text-sm lg:mt-4 mt-2 max-w-[384px]">
                 Architecting the Future of Digital Inclusivity
               </p>
             </div>
-            <div className="col-span-2 lg:pl-[39px] lg:border-l border-[#B1B1B1]/40">
+            <div
+              className={`${animationClassRight} col-span-2 lg:pl-[39px] lg:border-l border-[#B1B1B1]/40`}
+            >
               <div className="flex flex-col gap-5 text-sm">
                 <p className="lg:text-[14px] text-xs mt-2 leading-[21px]">
                   The Kalp Decentra Foundation stands at the forefront of the
@@ -104,7 +130,7 @@ export default function Home() {
           </div>
           <Vision />
           <AboutUs />
-          <Dpi/>
+          <Dpi />
           <EcoSystem />
           <GiniToken />
           <StrategicInitiatives />

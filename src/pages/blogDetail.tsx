@@ -1,17 +1,18 @@
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import blogb1 from "../../public/images/b1.jpg";
+import blogb2 from "../../public/images/b2.jpg";
+import blogb3 from "../../public/images/b3.jpg";
 import blogMAin from "../../public/images/blogDetail.jpg";
 import blogMAinMob from "../../public/images/blogDetailMob.jpg";
 import arrow from "../../public/images/east-2.svg";
 import gartto1 from "../../public/images/gartto1.jpg";
 import gartto2 from "../../public/images/gartto2.jpg";
 import gartto3 from "../../public/images/gartto3.jpg";
-import blogb1 from "../../public/images/b1.jpg";
-import blogb2 from "../../public/images/b2.jpg";
-import blogb3 from "../../public/images/b3.jpg";
-import { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import Faq from "@/components/Faq";
 
 export default function Blogs() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -63,6 +64,20 @@ export default function Blogs() {
     },
   ];
 
+  const [animationClass, setAnimationClass] = useState("");
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationClass("animate__animated animate__slideInDown");
+    } else {
+      setAnimationClass("");
+    }
+  }, [inView]);
+
   return (
     <>
       <div>
@@ -71,8 +86,10 @@ export default function Blogs() {
           <div className="">
             <div className="lg:mt-12 mt-6 ">
               <div className="lg:grid grid-cols-3 gap-[62px] ">
-                <div className="lg:col-span-2 col-span-3">
-                  <p className="md:text-[36px] text-[18px] font-semibold">
+                <div className="lg:col-span-2 col-span-3" ref={ref}>
+                  <p
+                    className={`md:text-[36px] text-[18px] font-semibold ${animationClass}`}
+                  >
                     Grid system for better Design User Interface
                   </p>
                   <div className="mt-4 md:mt-8">
@@ -230,7 +247,9 @@ export default function Blogs() {
                   </div>
                 </div>
                 <div className="lg:col-span-1 col-span-3  ">
-                  <p className="md:text-2xl text-md font-semibold mt-12 md:mt-0 mb-[24px] md:mb-8 lg:h-[54px] flex items-center">
+                  <p
+                    className={`md:text-2xl text-md font-semibold mt-12 md:mt-0 mb-[24px] md:mb-8 lg:h-[54px] flex items-center ${animationClass}`}
+                  >
                     Recent blog posts
                   </p>
                   {data?.map((item: any, index: number) => (

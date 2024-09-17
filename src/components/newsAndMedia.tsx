@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from 'next/image';
-import blackPrev from '../../public/images/blackPrev.svg';
-import blackNext from '../../public/images/Button Icon (1).svg';
-import whitePrev from '../../public/images/Button Icon (2).svg';
-import whiteNext from '../../public/images/whiteNext.svg';
-import media1 from '../../public/assets/news and media/black and white/1.png';
-import media2 from '../../public/assets/news and media/black and white/2.png';
-import media3 from '../../public/assets/news and media/black and white/3.png';
-import cmedia1 from '../../public/assets/news and media/colored/1.png';
-import cmedia2 from '../../public/assets/news and media/colored/2.png';
-import cmedia3 from '../../public/assets/news and media/colored/3.png';
+import "slick-carousel/slick/slick.css";
+import media1 from "../../public/assets/news and media/black and white/1.png";
+import media2 from "../../public/assets/news and media/black and white/2.png";
+import media3 from "../../public/assets/news and media/black and white/3.png";
+import cmedia1 from "../../public/assets/news and media/colored/1.png";
+import cmedia2 from "../../public/assets/news and media/colored/2.png";
+import cmedia3 from "../../public/assets/news and media/colored/3.png";
+import blackPrev from "../../public/images/blackPrev.svg";
+import blackNext from "../../public/images/Button Icon (1).svg";
+import whitePrev from "../../public/images/Button Icon (2).svg";
+import whiteNext from "../../public/images/whiteNext.svg";
 
 const NewsMedia = () => {
   const [setting, setSetting] = useState<any>(null);
@@ -28,32 +29,44 @@ const NewsMedia = () => {
 
   const PrevArrow = ({ onClick }: any) => (
     <div
-      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-[44px]' : 'left-[calc(50%-46px)] bottom-[-42px]'} z-10 cursor-pointer`}
+      className={`absolute ${
+        window.innerWidth > 768
+          ? "top-[-70px] right-[44px]"
+          : "left-[calc(50%-46px)] bottom-[-42px]"
+      } z-10 cursor-pointer`}
       onClick={() => {
         if (onClick) onClick();
-          setPrevClicked(true);
+        setPrevClicked(true);
         setNextClicked(false);
       }}
     >
-      <Image src={prevClicked ? blackPrev : whitePrev} alt="Previous" width={38} height={38} />
+      <Image
+        src={prevClicked ? blackPrev : whitePrev}
+        alt="Previous"
+        width={38}
+        height={38}
+      />
     </div>
   );
 
   const NextArrow = ({ onClick }: any) => (
     <div
-      className={`absolute ${window.innerWidth > 768 ? 'top-[-70px] right-0' : 'bottom-[-42px] right-[calc(50%-46px)]'} z-10 cursor-pointer`}
+      className={`absolute ${
+        window.innerWidth > 768
+          ? "top-[-70px] right-0"
+          : "bottom-[-42px] right-[calc(50%-46px)]"
+      } z-10 cursor-pointer`}
       onClick={() => {
         if (onClick) onClick();
         setNextClicked(true);
         setPrevClicked(false);
       }}
-
     >
-      {nextClicked ?
+      {nextClicked ? (
         <Image src={whiteNext} alt="Next" width={38} height={38} />
-        :
+      ) : (
         <Image src={blackNext} alt="Next" width={38} height={38} />
-      }
+      )}
     </div>
   );
 
@@ -69,10 +82,10 @@ const NewsMedia = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const mobSettings = {
@@ -87,36 +100,59 @@ const NewsMedia = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const data = [
     {
-      title: "KALP Foundation: Pioneering a Decentralized Digital Public Infrastructure",
-      description: "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
+      title:
+        "KALP Foundation: Pioneering a Decentralized Digital Public Infrastructure",
+      description:
+        "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
       imgSrc: media1,
-      hoverImgSrc: cmedia1
+      hoverImgSrc: cmedia1,
     },
     {
-      title: "Chain Reactions: Navigating India’s Progress with Blockchain Technology",
-      description: "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
+      title:
+        "Chain Reactions: Navigating India’s Progress with Blockchain Technology",
+      description:
+        "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
       imgSrc: media2,
-      hoverImgSrc: cmedia2
+      hoverImgSrc: cmedia2,
     },
     {
       title: "Embracing the Blockchain and the AI Tiger",
-      description: "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
+      description:
+        "Step into the realm of the KALP Foundation and discover how a non-profit is using blockchain technology...",
       imgSrc: media3,
-      hoverImgSrc: cmedia3
-    }
+      hoverImgSrc: cmedia3,
+    },
   ];
 
+  const [animationClass, setAnimationClass] = useState("");
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationClass("animate__animated animate__slideInDown");
+    } else {
+      setAnimationClass("");
+    }
+  }, [inView]);
+
   return (
-    <div className="relative lg:mt-[120px] mt-12">
-      <h2 className="lg:text-3xl text-lg font-bold text-center lg:mb-8 mb-4">News & Media</h2>
+    <div className="relative lg:mt-[120px] mt-12" ref={ref}>
+      <h2
+        className={`lg:text-3xl text-lg font-bold text-center lg:mb-8 mb-4 ${animationClass}`}
+      >
+        News & Media
+      </h2>
       <div className="news_media">
         <Slider {...setting}>
           {data.map((item, index) => (
@@ -136,7 +172,9 @@ const NewsMedia = () => {
                 <div className="absolute bottom-0 left-0 right-0 h-[43rem] bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 {/* Text Content */}
                 <div className="absolute lg:bottom-4 bottom-0 left-4 pb-7 px-2 text-white">
-                  <h3 className="lg:text-lg text-xs font-semibold">{item.title}</h3>
+                  <h3 className="lg:text-lg text-xs font-semibold">
+                    {item.title}
+                  </h3>
                   <p className="lg:text-sm text-xs mt-2">{item.description}</p>
                 </div>
                 {/* Research Tag */}

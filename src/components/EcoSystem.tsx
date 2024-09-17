@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import arrow from "../../public/images/east.svg";
 import { useEffect, useState } from "react";
 import Accordion from "./Accordion";
+import { useInView } from "react-intersection-observer";
 
 const EcoSystem: React.FC = () => {
   const [src, setSrc] = useState<any>(ecoImg);
@@ -15,10 +16,29 @@ const EcoSystem: React.FC = () => {
     setIsDesktop(window.innerWidth > 768);
   }, []);
 
+  const [animationClass, setAnimationClass] = useState("");
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationClass("animate__animated animate__slideInDown");
+    } else {
+      setAnimationClass("");
+    }
+  }, [inView]);
+
   return (
-    <div className="lg:mt-[120px] mt-[48px] w-full">
-      <div className="lg:flex flex-col gap-[16px] justify-center lg:max-w-[90%] m-auto text-center item-center">
-        <p className="lg:text-[32px] text-[18px] lg:mb-0 mb-2 font-bold">
+    <div className="lg:mt-[120px] mt-[48px] w-full" ref={ref}>
+      <div
+        className={`lg:flex flex-col gap-[16px] justify-center lg:max-w-[90%] m-auto text-center item-center ${animationClass}`}
+      >
+        <p
+          className={`lg:text-[32px] text-[18px] lg:mb-0 mb-2 font-bold`}
+          ref={ref}
+        >
           KALP Ecosystem
         </p>
         <p className="lg:text-[16px] text-sm">
@@ -50,10 +70,9 @@ const EcoSystem: React.FC = () => {
             }`}
           >
             <Accordion />
-          
 
-          <div className="bg-black block w-full lg:h-20 h-12 z-10">
-            {/* {isDesktop ? <div className="flex  flex-wrap justify-center ">
+            <div className="bg-black block w-full lg:h-20 h-12 z-10">
+              {/* {isDesktop ? <div className="flex  flex-wrap justify-center ">
                             <div className="relative h-[1px] w-1/2 ">
                                 <div className="absolute inset-0 bg-[#464646]"></div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent from-[#464646] w-10"></div>
@@ -64,16 +83,16 @@ const EcoSystem: React.FC = () => {
                             </div>
 
                         </div> : null} */}
-            <div className="flex items-center h-full lg:h-auto justify-center cursor-pointer lg:mt-6 group relative">
-              <Image
-                src={arrow}
-                alt="Arrow Icon"
-                className="h-4 w-5 !mt-0 lg:mt-4  opacity-0 transform  transition-all duration-300 group-hover:opacity-100 "
-              />
-              <p className="lg:text-2xl text-xl underline decoration-1 text-white cursor-pointer font-semibold transition-transform duration-300 -translate-x-6 group-hover:translate-x-2">
-                More About KALP
-              </p>
-            </div>
+              <div className="flex items-center h-full lg:h-auto justify-center cursor-pointer lg:mt-6 group relative">
+                <Image
+                  src={arrow}
+                  alt="Arrow Icon"
+                  className="h-4 w-5 !mt-0 lg:mt-4  opacity-0 transform  transition-all duration-300 group-hover:opacity-100 "
+                />
+                <p className="lg:text-2xl text-xl underline decoration-1 text-white cursor-pointer font-semibold transition-transform duration-300 -translate-x-6 group-hover:translate-x-2">
+                  More About KALP
+                </p>
+              </div>
             </div>
           </div>
         </div>

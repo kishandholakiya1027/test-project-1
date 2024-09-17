@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import arrowDown from "../../public/images/arrow_down.svg";
 import arrowUp from "../../public/images/arrow_forward_ios.svg";
-import Image from "next/image";
 
 const Faq: React.FC = () => {
   const [openAccordionIndex, setOpenAccordionIndex] = useState(0);
@@ -58,9 +59,25 @@ const Faq: React.FC = () => {
     },
   ];
 
+  const [animationClass, setAnimationClass] = useState("");
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationClass("animate__animated animate__slideInDown");
+    } else {
+      setAnimationClass("");
+    }
+  }, [inView]);
+
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center md:mt-[122px] mt-20">
+    <div ref={ref}>
+      <div
+        className={`flex flex-col justify-center items-center md:mt-[122px] mt-20 ${animationClass}`}
+      >
         <h1 className="md:text-[32px] text-[16px] text-md font-bold md:leading-[48px] leading-6 md:mb-4 mb-2">
           Frequently Asked Questions
         </h1>

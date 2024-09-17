@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import vision from "../../public/images/vision2.jpg";
-import visionOld from "../../public/images/oldVision.jpg";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import visionOld from "../../public/images/oldVision.jpg";
+import vision from "../../public/images/vision2.jpg";
 
 export default function Vision() {
   const [transitioned, setTransitioned] = useState(false);
@@ -18,20 +18,19 @@ export default function Vision() {
   }, []);
 
   useEffect(() => {
-    if(inView && isDesktop){
-      setTransitioned(true)
-    }else{
-      setTransitioned(false)
-    }
-  }, [inView])
-  const handleMouseEnter = () => {
-    if (!transitioned) {
+    if (inView && isDesktop) {
       setTransitioned(true);
+    } else {
+      setTransitioned(false);
     }
-  };
+  }, [inView]);
 
   return (
-    <div ref={ref} className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden" id="vision">
+    <div
+      ref={ref}
+      className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden"
+      id="vision"
+    >
       {isDesktop ? (
         <div
           // onMouseEnter={handleMouseEnter}
@@ -45,7 +44,9 @@ export default function Vision() {
             <Image
               src={transitioned ? vision : visionOld}
               alt="New"
-              className={`${transitioned ? "w-full" : "w-[418px] grayscale-0"} transition-all duration-[500ms] ease-in-out ml-4 lg:ml-0 grp  min-h-[417px] object-cover`}
+              className={`${
+                transitioned ? "w-full" : "w-[418px] grayscale-0"
+              } transition-all duration-[500ms] ease-in-out ml-4 lg:ml-0 grp  min-h-[417px] object-cover`}
             />
           </div>
           <div
