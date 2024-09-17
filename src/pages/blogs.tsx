@@ -1,23 +1,21 @@
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Image from "next/image";
-import blogMAin from "../../public/images/blog1.jpg";
-import blog1 from "../../public/images/blog2.jpg";
-import arrow from "../../public/images/east-2.svg";
-import blog2 from "../../public/images/blog3.jpg";
-import blog3 from "../../public/images/blog4.jpg";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import blogb1 from "../../public/images/b1.jpg";
 import blogb2 from "../../public/images/b2.jpg";
 import blogb3 from "../../public/images/b3.jpg";
+import blogMAin from "../../public/images/blog1.jpg";
+import blog1 from "../../public/images/blog2.jpg";
+import blog2 from "../../public/images/blog3.jpg";
+import blog3 from "../../public/images/blog4.jpg";
 import blogMainMob from "../../public/images/blogMobile.jpg";
 import blogMainMob2 from "../../public/images/blogMobile2.jpg";
 import blogMainMob3 from "../../public/images/blogMobile3.jpg";
 import blogMainMob4 from "../../public/images/blogMobile4.jpg";
-import arrowLeft from "../../public/images/east-2.svg";
-import arrowRight from "../../public/images/east-2.svg";
-import { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import Faq from "@/components/Faq";
-import { useRouter } from "next/router";
+import { default as arrow, default as arrowLeft, default as arrowRight } from "../../public/images/east-2.svg";
 
 export default function Blogs() {
   const router = useRouter();
@@ -144,7 +142,10 @@ export default function Blogs() {
                         alt="Arrow Icon"
                         className="h-3 transform -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                       />
-                      <p className="md:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 leading-9 -translate-x-6">
+                      <p
+                        onClick={() => router.push("/blogDetail")}
+                        className="md:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 leading-9 -translate-x-6"
+                      >
                         Read More
                       </p>
                     </div>
@@ -171,7 +172,10 @@ export default function Blogs() {
                           alt="Arrow Icon"
                           className="h-3 transform -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                         />
-                        <p className="md:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 -translate-x-6">
+                        <p
+                          onClick={() => router.push("/blogDetail")}
+                          className="md:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 -translate-x-6"
+                        >
                           Read More
                         </p>
                       </div>
@@ -229,7 +233,10 @@ export default function Blogs() {
                         alt="Arrow Icon"
                         className="h-3 transform -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                       />
-                      <p className="md:text-2xl text-[20px] underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 -translate-x-6">
+                      <p
+                        onClick={() => router.push("/blogDetail")}
+                        className="md:text-2xl text-[20px] underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 -translate-x-6"
+                      >
                         Read More
                       </p>
                     </div>
@@ -254,7 +261,10 @@ export default function Blogs() {
                       alt="Arrow Icon"
                       className="h-3 transform -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                     />
-                    <p className="md:text-2xl text-[20px] underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 -translate-x-6">
+                    <p
+                      onClick={() => router.push("/blogDetail")}
+                      className="md:text-2xl text-[20px] underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 group-hover:translate-x-2 -translate-x-6"
+                    >
                       Read More
                     </p>
                   </div>
@@ -308,7 +318,11 @@ export default function Blogs() {
                 className="flex items-center text-gray-900 hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={currentPage === 1}
               >
-                <Image src={arrowLeft} alt="Previous" className="h-3 w-3 rotate-180" />
+                <Image
+                  src={arrowLeft}
+                  alt="Previous"
+                  className="h-3 w-3 rotate-180"
+                />
                 <span className="hidden sm:block ml-2 text-sm font-[500] leading-5">
                   Previous
                 </span>

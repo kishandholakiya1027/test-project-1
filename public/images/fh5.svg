@@ -1,10 +1,16 @@
-<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1578_569)">
-<path d="M33.6 24.7874L41.663 16.7766L38.7145 16.7854L38.7049 13.6006L47.1161 13.5755L47.0909 21.9866L43.9061 21.977L43.915 19.0285L35.852 27.0394L33.6 24.7874ZM53.8152 49.6184H57V57H49.6184V53.8152H53.8152V49.6184ZM57 24.7874H53.8152V36.5394H57V24.7874ZM57 10.3816H53.8152V6.18479H49.6184V3H57V10.3816ZM36.5395 3H24.7875V6.18479H36.5395V3ZM10.3816 3V6.18479H6.1848V10.3816H3V3H10.3816ZM6.1848 30.331H28.8918V53.8152H36.3468V57H3V23.4605H6.1848V30.331Z" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_1578_569">
-<rect width="54" height="54" fill="white" transform="matrix(-1 0 0 1 57 3)"/>
-</clipPath>
-</defs>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+	<title>f5-svg</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m57 3h-54v54h54z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #ffffff } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g>
+			<path fill-rule="evenodd" class="s0" d="m33.6 24.8l8.1-8h-3v-3.2h8.4v8.4h-3.2v-3l-8 8zm20.2 24.9h3.2v7.4h-7.4v-3.2h4.2zm3.2-13.1h-3.2v-11.8h3.2zm0-26.1h-3.2v-4.2h-4.2v-3.2h7.4zm-20.5-4.2h-11.8v-3.2h11.8zm-26.2-3.2v3.2h-4.2v4.2h-3.1v-7.4zm-4.2 27.4h22.7v23.4h7.4v3.2h-33.3v-33.5h3.2z"/>
+		</g>
+	</g>
 </svg>

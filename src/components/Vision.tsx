@@ -31,7 +31,7 @@ export default function Vision() {
   };
 
   return (
-    <div ref={ref} className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden">
+    <div ref={ref} className="lg:relative w-full my-12 xl:my-[120px] md:my-[80px] flex items-center justify-center overflow-hidden" id="vision">
       {isDesktop ? (
         <div
           // onMouseEnter={handleMouseEnter}

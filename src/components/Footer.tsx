@@ -16,16 +16,10 @@ const Footer: React.FC<FooterProps> = (props) => {
     setIsDesktop(window.innerWidth > 768);
   }, []);
 
-  const scrollToAboutKalpFoundation = () => {
-    const aboutElement = document.getElementById('about-kalp-foundation');
-    if (aboutElement) {
-      aboutElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  const scrollToGini = () => {
-    const aboutElement = document.getElementById('gini');
-    if (aboutElement) {
-      aboutElement.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
   return (
@@ -60,20 +54,17 @@ const Footer: React.FC<FooterProps> = (props) => {
               </p>
               <div className="md:mt-6 mt-4 flex md:flex-col wrap md:gap-0 gap-12">
                 <ul className="md:block grid grid-cols-2 md:gap-0 gap-x-10">
-                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal md:order-none order-1" onClick={scrollToAboutKalpFoundation}
+                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal md:order-none order-1" onClick={() => scrollToSection('about-kalp-foundation')}
                   >
                     About Kalp Foundation
                   </li>
-                  <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-3">
-                    Mission & Vision
-                  </li>
-                  <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-5">
-                    About Us
+                  <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-3 cursor-pointer" onClick={() => scrollToSection('vision')}>
+                    Vision
                   </li>
                   <li className="md:text-[14px] text-[12px] leading-[30px] md:mt-2 font-normal md:order-none order-2">
                     KALP Network
                   </li>
-                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-4" onClick={scrollToGini}>
+                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-4" onClick={() => scrollToSection('gini')}>
                     GINI: Digital Currency
                   </li>
                   <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-6" onClick={() => router.push("/blogs")}>

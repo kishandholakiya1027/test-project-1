@@ -125,7 +125,7 @@ export default function GiniToken() {
           loading="lazy"
           width={530}
           height={300}
-          className="transition-transform duration-1000 ease-in-out w-full h-auto"
+          className="transition-transform duration-1500 ease-in-out w-full h-auto"
         />
       </div>
     ) : null}

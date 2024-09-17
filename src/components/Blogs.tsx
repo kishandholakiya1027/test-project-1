@@ -61,7 +61,7 @@ const Blogs: React.FC = () => {
                       />
                       <p
                         className="lg:text-2xl text-xl underline decoration-1 cursor-pointer font-semibold transition-transform duration-300 -translate-x-6 group-hover:translate-x-2"
-                        onClick={() => router.push("/blogs")}
+                        onClick={() => router.push("/blogDetail")}
                       >
                         Read More
                       </p>
