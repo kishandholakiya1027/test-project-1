@@ -21,7 +21,6 @@ export default function Home() {
   const [src, setSrc] = useState(bannerImg2);
   const [animationClass, setAnimationClass] = useState("");
   const [animationClassLeft, setAnimationClassLeft] = useState("");
-  const [animationClassRight, setAnimationClassRight] = useState("");
 
   const imageRef = useRef(null);
 
@@ -44,12 +43,10 @@ export default function Home() {
   useEffect(() => {
     if (inView) {
       setAnimationClass("animate__animated animate__slideInDown");
-      setAnimationClassLeft("animate__animated animate__slideInLeft");
-      setAnimationClassRight("animate__animated animate__slideInRight");
+       setAnimationClassLeft("animate__animated animate__slideInLeft");
     } else {
       setAnimationClass("");
       setAnimationClassLeft("");
-      setAnimationClassRight("");
     }
   }, [inView]);
 
@@ -80,7 +77,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]" ref={ref}>
+          <div className="lg:grid grid-cols-3 lg:mt-28 mt-[32px]">
             <div className={`col-span-1 ${animationClassLeft}`}>
               <p
                 className="lg:text-[32px] text-md font-bold"
@@ -93,7 +90,7 @@ export default function Home() {
               </p>
             </div>
             <div
-              className={`${animationClassRight} col-span-2 lg:pl-[39px] lg:border-l border-[#B1B1B1]/40`}
+              className={`col-span-2 lg:pl-[39px] lg:border-l border-[#B1B1B1]/40`}
             >
               <div className="flex flex-col gap-5 text-sm">
                 <p className="lg:text-[14px] text-xs mt-2 leading-[21px]">

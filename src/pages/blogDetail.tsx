@@ -105,7 +105,7 @@ export default function Blogs() {
                       className="w-full mx-auto md:mx-0"
                     />
                     <p className={`md:text-sm text-xs text-[#45525F] mt-2 md:mt-8 font-semibold ${animationClass3}`}>
-                      Sunday , 1 Jan 2023
+                      Sunday, 1 Jan 2023
                     </p>
                     <p className={`${animationClass3} mt-2 md:mt-8 md:text-[15px] text-[12px]`}>
                       A grid system is a design tool used to arrange content on
