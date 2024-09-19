@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = (props) => {
     }
   };
   return (
-    <footer className="bg-[#000]">
+    <footer className="bg-[#000] mt-[49px] md:mt-[120px]">
       <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
         <div className="flex flex-wrap justify-between text-[#fff] py-6 items-center">
           <div className="basis-full md:basis-[22%] mb-[48px] md:mb-0 flex justify-center md:justify-start">
@@ -89,7 +89,7 @@ const Footer: React.FC<FooterProps> = (props) => {
         </div>
         <div className="bg-[#000] font-thin text-[#fff]">
           <div
-            className={`border-t border-[#fff]/40 flex md:py-6 py-2 ${
+            className={`border-t border-[#333] flex md:py-6 py-2 ${
               isDesktop ? "flex-wrap " : "justify-center flex-col"
             }  md:gap-0 gap-4 justify-between items-center`}
           >

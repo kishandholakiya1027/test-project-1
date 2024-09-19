@@ -105,7 +105,7 @@ const Dpi: React.FC = () => {
     }
   }, [inView]);
   return (
-    <div className="lg:mt-[120px] mt-12 w-full overflow-hidden" ref={ref}>
+    <div className="lg:my-[120px] my-12 w-full" ref={ref}>
       <div
         className={`lg:flex flex-col gap-[10px] justify-center lg:px-12 text-center ${animationClass}`}
       >
@@ -122,7 +122,9 @@ const Dpi: React.FC = () => {
       </div>
 
       {/* 4x4 Grid */}
-      <div className={`grid grid-cols-4 gap-[5px] md:gap-[24px] pt-4 md:pt-[48px] ${animationClassUp}`}>
+      <div
+        className={`grid grid-cols-4 gap-[5px] md:gap-[24px] pt-4 md:pt-[48px] ${animationClassUp}`}
+      >
         {boxData.map((box, index) => (
           <div key={index} className="lg:col-span-1 col-span-2">
             <AnimatedImageBox
@@ -255,7 +257,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
   return (
     <div
       ref={imageContainerRef}
-      className="relative w-full lg:h-[300px] h-[216px] cursor-pointer overflow-hidden"
+      className="relative w-full lg:h-[300px] h-[216px] cursor-pointer"
     >
       {id === 8 ? (
         <div
@@ -270,33 +272,51 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
         </div>
       ) : (
         <>
-          <div
-            ref={image1Ref}
-            className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center"
-            style={{ position: "absolute", left: "0%", right: "0%" }}
-          >
-            <Image src={linesImage} alt={title} layout="fill" />
-            <div className="absolute left-[10px] lg:left-[24px] top-5 z-10">
+          <div className="flip-card lg:h-[300px] h-[216px]">
+            <div className="flip-card-inner">
+              <div className="flip-card-front p-6 flex flex-col justify-between">
+                <Image
+                  className="lg:h-14 lg:w-14 h-10 w-10"
+                  src={normalImage}
+                  alt={title}
+                />
+                <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
+              </div>
+              <div className="flip-card-back bg-black text-white p-6 flex flex-col justify-between">
               <Image
-                className="lg:h-14 lg:w-14 h-10 w-10"
-                src={normalImage}
-                alt={title}
-              />
-            </div>
-            <div
-              ref={whitetextContainerRef}
-              className="absolute lg:bottom-16  left-[10px] lg:left-[24px] bottom-4  text-black z-10"
-            >
-              <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
+                  className="lg:h-14 lg:w-14 h-10 w-10"
+                  src={hoverImage}
+                  alt={title}
+                />
+                <div className="mt-6 overflow-hidden h-[90px]">
+                <p className="lg:text-[20px] text-sm  font-semibold mb-4">{title}</p>
+                <p className="lg:text-[16px] text-[12px]">{description}</p>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div
-            ref={image2Ref}
-            className="absolute bg-black top-0 left-0 w-full h-full opacity-0 flex flex-col justify-center items-center"
-            style={{ position: "absolute", left: "50%", right: "50%" }}
+          {/* <div
+            // ref={image1Ref}
+            className="flip-card-inner absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center"
+            style={{ position: "absolute", left: "0%", right: "0%" }}
           >
-            <div className="absolute left-6 top-5 z-10">
+            <div className="flip-card-front">
+              <Image src={linesImage} alt={title} layout="fill" />
+              <div className="absolute left-[10px] lg:left-[24px] top-5 z-10">
+                <Image
+                  className="lg:h-14 lg:w-14 h-10 w-10"
+                  src={normalImage}
+                  alt={title}
+                />
+              </div>
+              <div
+                // ref={whitetextContainerRef}
+                className="absolute lg:bottom-16  left-[10px] lg:left-[24px] bottom-4  text-black z-10"
+              >
+                <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
+              </div>
+            </div>
+<div className="absolute left-6 top-5 z-10 flip-card-back">
               <Image
                 className="lg:h-14 lg:w-14 h-10 w-10"
                 src={hoverImage}
@@ -305,7 +325,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
             </div>
 
             <div
-              ref={textContainerRef}
+              // ref={textContainerRef}
               className="absolute lg:bottom-10 bottom-2 top-[70px] sm:top-[auto]"
             >
               <div className=" flex flex-col gap-3   px-4 text-white z-10">
@@ -315,7 +335,15 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
                 <p className="lg:text-[16px] text-[12px]">{description}</p>
               </div>
             </div>
-          </div>
+          </div> */}
+
+          {/* <div
+            // ref={image2Ref}
+            className="absolute bg-black top-0 left-0 w-full h-full opacity-0 flex flex-col justify-center items-center"
+            style={{ position: "absolute", left: "50%", right: "50%" }}
+          >
+            
+          </div> */}
         </>
       )}
     </div>
