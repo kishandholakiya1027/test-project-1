@@ -60,7 +60,7 @@ const Blogs: React.FC = () => {
         <h1
           className={`lg:text-[32px] text-md font-bold md:mb-4 mb-2 ${animationClass}`}
         >
-          Blogs
+          Blogs & Resources
         </h1>
         <div className={`w-full items-center relative`}>
           <p className={`text-[16px] text-center ${animationClass}`}>

@@ -1,10 +1,7 @@
 import Image from "next/image";
-import Insta from "../../public/images/insta.svg";
-import Facebook from "../../public/images/facebook.svg";
-import Twitter from "../../public/images/twitter.svg";
-import Linkdin from "../../public/images/linkdin.svg";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import logo from "../../public/images/logo-white.svg";
 
 interface FooterProps {}
 
@@ -19,122 +16,88 @@ const Footer: React.FC<FooterProps> = (props) => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
     <footer className="bg-[#000]">
       <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
-        <div className="grid md:grid-cols-3 grid-cols-5 font-thin md:mt-[130px] mt-[49px] w-full text-[#fff] pt-[15px] pb-10 md:py-6">
-          <div className="col-span-3 order-2 md:order-1 md:col-span-1">
-            <div>
+        <div className="flex flex-wrap justify-between text-[#fff] py-6 items-center">
+          <div className="basis-full md:basis-[22%] mb-[48px] md:mb-0 flex justify-center md:justify-start">
+            <Image src={logo} width={150} height={65} alt="logo" />
+          </div>
+          <div className="w-[1px] min-h-[155px] bg-[#333] md:block hidden"></div>
+          <div className="basis-[48%] md:basis-[34%] flex justify-center md:mb-0">
+            <div className="text-left md:mx-6">
               <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">
                 Contact us
               </p>
               <p className="md:text-[14px] text-[12px] font-medium md:leading-[21px] leading-[18px] md:mt-6 mt-4">
                 Registered Office:
               </p>
-            </div>
-            <div className="md:mt-7 mt-5">
-              <p className="md:text-[14px] text-[12px] font-normal md:leading-[21px] leading-[18px]">
-                Lewes, Delaware 19958,
-              </p>
-              <p className="md:text-[14px] text-[12px] font-normal md:leading-[21px] leading-[18px]">
-                16192 Coastal Highway
-              </p>
-              <p className="md:text-[14px] text-[12px] font-normal md:leading-[21px] leading-[18px]">
-                County of Sussex.{" "}
-              </p>
+              <div className="md:mt-7 mt-5">
+                <p className="md:text-[14px] text-[12px] font-normal md:leading-[21px] leading-[18px]">
+                  Lewes, Delaware 19958,
+                </p>
+                <p className="md:text-[14px] text-[12px] font-normal md:leading-[21px] leading-[18px]">
+                  16192 Coastal Highway
+                </p>
+                <p className="md:text-[14px] text-[12px] font-normal md:leading-[21px] leading-[18px]">
+                  County of Sussex.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="col-span-5 order-1 md:flex flex-wrap justify-center md:order-2 md:col-span-1">
-            <div className="md:mb-0 mb-[49px]">
+          <div className="w-[1px] min-h-[155px] bg-[#333] md:block hidden"></div>
+
+          <div className="basis-[48%] md:basis-[42%] flex justify-center">
+            <div className="text-left md:mx-6">
               <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">
                 Quick Links
               </p>
-              <div className="md:mt-6 mt-4 flex md:flex-col wrap md:gap-0 gap-12">
-                <ul className="md:block grid grid-cols-2 md:gap-0 gap-x-10">
-                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal md:order-none order-1" onClick={() => scrollToSection('about-kalp-foundation')}
-                  >
-                    About Kalp Foundation
-                  </li>
-                  <li className="md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-3 cursor-pointer" onClick={() => scrollToSection('vision')}>
-                    Vision
-                  </li>
-                  <li className="md:text-[14px] text-[12px] leading-[30px] md:mt-2 font-normal md:order-none order-2">
-                    KALP Network
-                  </li>
-                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-4" onClick={() => scrollToSection('gini')}>
-                    GINI: Digital Currency
-                  </li>
-                  <li className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] mt-2 font-normal md:order-none order-6" onClick={() => router.push("/blogs")}>
-                    Blogs
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-2 order-3 flex flex-wrap md:pl-10 justify-around md:col-span-1">
-            <div>
-              <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">
-                Follow us on
-              </p>
-              <div className="md:mt-6 mt-4">
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
-                  <Image
-                    src={Facebook}
-                    alt={""}
-                    className="md:w-[30px] md:h-[30px] w-6 h-6 flex items-center justify-center"
-                  />
-                  <p className="md:text-[14px] text-[12px] font-[400] md:leading-[21px] leading-[18px]">
-                    Facebook
-                  </p>
-                </div>
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
-                  <Image
-                    src={Linkdin}
-                    alt={""}
-                    className="md:w-[30px] md:h-[30px] w-6 h-6 flex items-center justify-center"
-                  />
-                  <p className="md:text-[14px] text-[12px] font-[400] md:leading-[21px] leading-[18px]">
-                    LinkedIn
-                  </p>
-                </div>
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
-                  <Image
-                    src={Twitter}
-                    alt={""}
-                    className="md:w-[30px] md:h-[30px] w-6 h-6 flex items-center justify-center"
-                  />
-                  <p className="md:text-[14px] text-[12px] font-[400] md:leading-[21px] leading-[18px]">
-                    Twitter
-                  </p>
-                </div>
-                <div className="flex flex-wrap md:gap-4 gap-[9px] mt-2 items-center cursor-pointer">
-                  <Image
-                    src={Insta}
-                    alt={""}
-                    className="md:w-[30px] md:h-[30px] w-6 h-6 flex items-center justify-center"
-                  />
-                  <p className="md:text-[14px] text-[12px] font-[400] md:leading-[21px] leading-[18px]">
-                    Instagram
-                  </p>
-                </div>
-              </div>
+              <ul className="md:grid md:grid-cols-2 gap-x-6 lg:gap-x-[30px] xl:gap-x-[84px] md:mt-6 mt-4">
+                <li
+                  className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal"
+                  onClick={() => scrollToSection("about-kalp-foundation")}
+                >
+                  About Kalp Foundation
+                </li>
+                <li
+                  className="md:text-[14px] text-[12px] leading-[30px] font-normal cursor-pointer"
+                  onClick={() => scrollToSection("vision")}
+                >
+                  Vision
+                </li>
+                <li className="md:text-[14px] text-[12px] leading-[30px] font-normal">
+                  KALP Network
+                </li>
+                <li
+                  className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal"
+                  onClick={() => scrollToSection("gini")}
+                >
+                  GINI: Digital Currency
+                </li>
+                <li
+                  className="cursor-pointer md:text-[14px] text-[12px] leading-[30px] font-normal"
+                  onClick={() => router.push("/blogs")}
+                >
+                  Blogs & Resources
+                </li>
+              </ul>
             </div>
           </div>
         </div>
         <div className="bg-[#000] font-thin text-[#fff]">
           <div
             className={`border-t border-[#fff]/40 flex md:py-6 py-2 ${
-              isDesktop ? "flex-wrap " : " flex-col"
+              isDesktop ? "flex-wrap " : "justify-center flex-col"
             }  md:gap-0 gap-4 justify-between items-center`}
           >
-            <p className="md:text-[12px] font-[400] text-[10px] leading-6">
+            <p className="md:text-[12px] font-[400] text-[10px] leading-6 text-center">
               Copyright © 2024 KALP Decentra Foundation. All rights reserved.
             </p>
             <p className="md:text-xs text-[10px] font-[400] leading-6">
-              <span className="underline">Terms & Conditions</span> |{" "}
+              <span className="underline">Terms & Conditions </span> |
               <span className="underline">Privacy Policy</span>
             </p>
           </div>

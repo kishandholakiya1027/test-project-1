@@ -2,6 +2,20 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import circledown from "../../public/images/expand_circle_down.svg";
+import Pradeep from "../../public/images/Pradeep Kumar Sama.png";
+import Satheesh from "../../public/images/Satheesh Srinivasan .png";
+import Aashish from "../../public/images/Aashish Pasricha.png";
+import Kamal from "../../public/images/Kamal Kumar Malkani .png";
+import Vibhav from "../../public/images/Vibhav Sharma.png";
+import Kotha from "../../public/images/Kotha Raghavendra Raja.png";
+import Vishal from "../../public/images/Vishal Singh.png";
+import Saharsh from "../../public/images/Saharsh  Sinha.png";
+import Siddharth from "../../public/images/Siddharth Jain .png";
+import Abhinav from "../../public/images/Abhinav Mishra  .png";
+import Gaurav from "../../public/images/Gaurav Singh  .png";
+import Chirag from "../../public/images/Chirag Garg  .png";
+import Tushar from "../../public/images/Tushar Bansal  .png";
+import Yalla from "../../public/images/Yalla Abhinay.png";
 
 const Team: React.FC = () => {
   const [visibleItems, setVisibleItems] = useState(4); // Initially show 4 items
@@ -12,58 +26,73 @@ const Team: React.FC = () => {
     {
       name: "Pradeep Kumar Sama",
       profile: "Blockchain Developer",
+      image: Pradeep
+
     },
     {
       name: "Satheesh Srinivasan ",
       profile: "Blockchain Developer",
+      image: Satheesh
     },
     {
       name: "Aashish Pasricha",
       profile: "Blockchain Developer",
+      image: Aashish
     },
     {
       name: "Kamal Kumar Malkani ",
       profile: "Senior Blockchain Developer",
+      image: Kamal
     },
     {
       name: "Vibhav Sharma",
       profile: "Blockchain Developer - L1",
+      image: Vibhav
     },
     {
       name: "Kotha Raghavendra Raja",
       profile: "Security Engineer",
+      image: Kotha
     },
     {
       name: "Vishal Singh",
       profile: "Software Developer",
+      image: Vishal
     },
     {
       name: "Saharsh  Sinha",
       profile: "SDE - Data Science",
+      image: Saharsh
     },
     {
       name: "Siddharth Jain ",
       profile: "Blockchain Engineer - L1",
+      image: Siddharth
     },
     {
       name: "Abhinav Mishra  ",
       profile: "Senior Golang Developer",
+      image: Abhinav
     },
     {
       name: "Gaurav Singh  ",
       profile: "Software Engineer - L3",
+      image: Gaurav
     },
     {
       name: "Chirag Garg  ",
       profile: "Software Engineer - L2",
+      image: Chirag
     },
     {
       name: "Tushar Bansal  ",
       profile: "Blockchain Engineer - L2",
+      image: Tushar
     },
     {
       name: "Yalla Abhinay",
       profile: "DevOps Engineer - L1",
+      image: Yalla
     },
   ];
 
@@ -117,12 +146,18 @@ const Team: React.FC = () => {
             key={index}
             className={`lg:col-span-1 col-span-2 flex flex-col gap-2 ${animationClassZoom}`}
           >
-            <div className="bg-[#D9D9D9] lg:h-[297px] h-[166px] w-full"></div>
+            <div className="bg-[#D9D9D9] h-full w-full">
+              <Image
+                src={item?.image}
+                alt="kalp Logo"
+                className="w-full h-full object-cover ease-in-out grayscale hover:grayscale-0 transition-all duration-1500"
+              />
+            </div>
             <div>
-              <p className="lg:text-[20px] text-sm font-semibold">
+              <p className="lg:text-[20px] text-sm font-semibold truncate">
                 {item?.name}
               </p>
-              <p className="lg:text-base text-xs ">{item?.profile}</p>
+              <p className="lg:text-base text-xs truncate">{item?.profile}</p>
             </div>
           </div>
         ))}
