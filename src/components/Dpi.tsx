@@ -288,7 +288,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
                   src={hoverImage}
                   alt={title}
                 />
-                <div className="mt-6 overflow-hidden h-[90px]">
+                <div className="mt-6 md:overflow-hidden md:h-[90px]">
                 <p className="lg:text-[20px] text-sm  font-semibold mb-4">{title}</p>
                 <p className="lg:text-[16px] text-[12px]">{description}</p>
                 </div>
