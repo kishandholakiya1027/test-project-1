@@ -257,7 +257,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
   return (
     <div
       ref={imageContainerRef}
-      className="relative w-full lg:h-[325px] h-[216px] cursor-pointer"
+      className="relative w-full lg:h-[325px] h-[221px] cursor-pointer"
     >
       {id === 8 ? (
         <div
@@ -272,7 +272,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
         </div>
       ) : (
         <>
-          <div className="flip-card lg:h-[325px] h-[216px]">
+          <div className="flip-card lg:h-[325px] h-[221px]">
             <div className="flip-card-inner">
               <div className="flip-card-front p-6 flex flex-col justify-between">
                 <Image
