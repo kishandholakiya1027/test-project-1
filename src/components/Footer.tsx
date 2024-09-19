@@ -23,11 +23,11 @@ const Footer: React.FC<FooterProps> = (props) => {
     <footer className="bg-[#000] mt-[49px] md:mt-[120px]">
       <div className="xl:max-w-[1360px] max-w-full mx-auto w-full px-4 2xl:px-0">
         <div className="flex flex-wrap justify-between text-[#fff] py-6 items-center">
-          <div className="basis-full md:basis-[22%] mb-[48px] md:mb-0 flex justify-center md:justify-start">
+          <div className="basis-full md:basis-[22%] mb-[48px] md:mb-0 flex justify-center md:justify-start self-start">
             <Image src={logo} width={150} height={65} alt="logo" />
           </div>
           <div className="w-[1px] min-h-[155px] bg-[#333] md:block hidden"></div>
-          <div className="basis-[48%] md:basis-[34%] flex justify-center md:mb-0">
+          <div className="basis-[48%] md:basis-[34%] flex md:justify-center md:mb-0">
             <div className="text-left md:mx-6">
               <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">
                 Contact us
