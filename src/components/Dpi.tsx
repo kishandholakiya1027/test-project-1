@@ -280,7 +280,7 @@ const AnimatedImageBox: React.FC<AnimatedImageBoxProps> = ({
                   src={normalImage}
                   alt={title}
                 />
-                <p className="lg:text-[20px] text-sm  font-semibold">{title}</p>
+                <p className="lg:text-[20px] text-sm  font-semibold md:mb-[52px]">{title}</p>
               </div>
               <div className="flip-card-back bg-black text-white p-6 flex flex-col justify-between">
               <Image
