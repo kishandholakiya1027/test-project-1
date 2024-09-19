@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = (props) => {
             <Image src={logo} width={150} height={65} alt="logo" />
           </div>
           <div className="w-[1px] min-h-[155px] bg-[#333] md:block hidden"></div>
-          <div className="basis-[48%] md:basis-[34%] flex md:justify-center md:mb-0">
+          <div className="basis-[48%] md:basis-[34%] flex md:justify-center md:mb-0 self-start md:self-center">
             <div className="text-left md:mx-6">
               <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">
                 Contact us
@@ -50,7 +50,7 @@ const Footer: React.FC<FooterProps> = (props) => {
           </div>
           <div className="w-[1px] min-h-[155px] bg-[#333] md:block hidden"></div>
 
-          <div className="basis-[48%] md:basis-[42%] flex justify-center">
+          <div className="basis-[48%] md:basis-[42%] flex justify-center self-start md:self-center">
             <div className="text-left md:mx-6">
               <p className="md:text-[32px] md:font-[500] font-[600] md:leading-[48px] leading-[30px] text-[20px]">
                 Quick Links
