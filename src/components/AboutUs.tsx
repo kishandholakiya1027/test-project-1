@@ -141,7 +141,7 @@ const AboutUs: React.FC = () => {
               Web 3.0, tokenization and blockchain. With his 30+ years
               experience in technology, consulting and real estate at Lotus
               Greens, Orris Infrastructure, and PwC, he is driving the
-              foundation's success.
+              foundation &apos; s success.
             </p>
             <Image
               src={linkedin}
